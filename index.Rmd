@@ -1,0 +1,59 @@
+---
+title: "Applied Machine Learning"
+subtitle: ""
+author: "
+      <a href='https://therbootcamp.github.io'>
+        <i class='fas fa-home' style='font-size:1em;'></i>
+      </a>
+      <a href='https://therbootcamp.github.io/AML_2020AMLD/'>
+        <i class='fas fa-clock' style='font-size:1em;' ></i>
+      </a>
+      <a href='mailto:therbootcamp@gmail.com'>
+        <i class='fas fa-envelope' style='font-size: 1em;'></i>
+      </a>
+      <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
+        <i class='fab fa-linkedin' style='font-size: 1em;'></i>
+      </a>
+      <a href='https://therbootcamp.github.io/EDA_2019CSS/'>
+        <font style='font-style:normal;font-size:20px;padding-left:5px'>The R Bootcamp @ AMLD</font>
+      </a>
+      <br>
+      <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style= 'height:16.7px;vertical-align:baseline'/><font style='font-style:normal;font-size:20px;padding-left:9.3px'>January 2020</font>
+      "
+output:
+  html_document:
+    css: index.css
+    self_contained: no
+---
+
+<br>
+
+##### **Installation** 
+
+##### **Data sets** 
+<!---(https://raw.githubusercontent.com/therbootcamp/EDA_2019CSS/master/1_Data/TheRBootcamp_EDA_2019CSS_data.zip)--->
+##### **PDFs**
+<!---[PDFs](https://github.com/therbootcamp/R4DS_2019Feb/raw/master/_sessions/_pdf/EDA_2019CSS_pdfs.zip)--->
+<!--- <font style="font-size:12px">(made available later)</font>--->
+
+<br>
+
+### Materialien
+
+|  | Day 1 |
+|:--|:-------------|
+|0|  | 
+|1|  | 
+|2|  | 
+|3|  | 
+|4|  | 
+<br>
+
+
+### Schedule
+
+<!---
+<p align="left"><br>
+    <img border="0" alt="Schedule" src="https://therbootcamp.github.io/EDA_2019CSS/_sessions/Welcome/image/schedule.png" style="width:410px">
+</p>
+---->

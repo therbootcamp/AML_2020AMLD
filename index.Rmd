@@ -14,7 +14,7 @@ author: "
       <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
         <i class='fab fa-linkedin' style='font-size: 1em;'></i>
       </a>
-      <a href='https://therbootcamp.github.io/EDA_2019CSS/'>
+      <a href='https://therbootcamp.github.io/AML_2020AMLD/'>
         <font style='font-style:normal;font-size:20px;padding-left:5px'>The R Bootcamp @ AMLD</font>
       </a>
       <br>
@@ -34,12 +34,12 @@ Before attending, please...
 
 - go through the [**installation instructions**](https://therbootcamp.github.io/AML_2020AMLD/installation/instructions.html). 
 
-- fill out this [**Survey**](https://docs.google.com/forms/d/e/1FAIpQLSf9CO6tehkFG7hQElxXBmCZvEnV-4aGTiqmGAmTpie1eG7rnQ/viewform?usp=sf_link) 
+- fill out this [**survey**](https://docs.google.com/forms/d/e/1FAIpQLSf9CO6tehkFG7hQElxXBmCZvEnV-4aGTiqmGAmTpie1eG7rnQ/viewform?usp=sf_link).
 
 
 <br>
 
-### Materials
+### Materials <font style="font-size:12px">(tba)</font>
 
 |  | Day 1 |
 |:--|:-------------|
@@ -53,7 +53,6 @@ Before attending, please...
 
 ### Schedule
 
-
 <p align="left"><br>
-    <img border="0" alt="Schedule" src="https://therbootcamp.github.io/AML_2020AMLD/_sessions/Introduction/image/schedule.png" style="width:410px">
+    <img border="0" alt="Schedule" src="https://raw.githubusercontent.com/therbootcamp/AML_2020AMLD/master/_sessions/Introduction/image/schedule.png" style="width:360px">
 </p>

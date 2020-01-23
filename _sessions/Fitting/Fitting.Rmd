@@ -1,8 +1,8 @@
 ---
 title: "Fitting"
-author: "Machine Learning with R<br>
+author: "Applied Machine Learning with R<br>
   <a href='https://therbootcamp.github.io'>
-    Basel R Bootcamp
+    The R Bootcamp @ AMLD
   </a>
   <br>
   <a href='https://therbootcamp.github.io/ML_2019Oct/'>

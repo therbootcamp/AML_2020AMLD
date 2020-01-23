@@ -1,11 +1,11 @@
 ---
-title: "Welcome!"
-author: "Machine Learning with R<br>
+title: "Introduction"
+author: "Applied Machine Learning with R<br>
   <a href='https://therbootcamp.github.io'>
-    Basel R Bootcamp
+    The R Bootcamp @ AMLD
   </a>
   <br>
-  <a href='https://therbootcamp.github.io/ML_2019Oct/'>
+  <a href='https://therbootcamp.github.io/AML_2020AMLD/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -17,7 +17,7 @@ author: "Machine Learning with R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "October 2019"
+date: "January 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-      Machine Learning with R | October 2019
+      Applied Machine Learning with R @ AMLD  | January 2020
       </font>
     </a>
     </span>

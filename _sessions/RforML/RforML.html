@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
-    <title>R for ML</title>
+    <title>Intro to R</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Machine Learning with R   Basel R Bootcamp" />
+    <meta name="author" content="Applied Machine Learning with R   The R Bootcamp @ AMLD" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
@@ -11,9 +11,9 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# R for ML
-### Machine Learning with R<br> <a href='https://therbootcamp.github.io'> Basel R Bootcamp </a> <br> <a href='https://therbootcamp.github.io/ML_2019Oct/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-### October 2019
+# Intro to R
+### Applied Machine Learning with R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp @ AMLD </a> <br> <a href='https://therbootcamp.github.io/AML_2020AMLD/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### January 2020
 
 ---
 
@@ -34,7 +34,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Machine Learning with R | October 2019
+      Applied Machine Learning with R @ AMLD  | January 2020
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -46,34 +46,6 @@ layout: true
 
 
 
-# R is a programming language
-
-From [Wikipedia](https://en.wikipedia.org/wiki/Statistical_model) (emphasis added):
-
-&gt; A programming language is a **formal language** that specifies a set of instructions that can be used to produce various kinds of output. Programming languages generally consist of **instructions for a computer**. Programming languages can be used to create programs that **implement specific algorithms**.
-
-.pull-left4[
-### Algorithm
-1. Load data
-2. Extract variables
-3. Run analysis
-4. Print result
-]
-
-.pull-right6[
-### Implementation in R
-
-
-
-```r
-#data &lt;- read.table(link)
-#variables &lt;- data[,c('group','variable')]
-#analysis &lt;- lm(variable ~ group, data = variables)
-#summary(analysis)
-```
-]
-
----
 
 # Why R?
 
@@ -96,6 +68,15 @@ In terms of the number of data science jobs, **R beats SAS and Matlab**, and is 
   &lt;img src="https://i0.wp.com/r4stats.com/wp-content/uploads/2017/02/Fig-1a-IndeedJobs-2017.png" height="450"&gt;
 &lt;/p&gt;
 ]
+
+
+---
+
+# R is great for ML
+
+...because of high-performance R packages (extensions) downloaded and used millions of times.
+
+&lt;p align="center"&gt;&lt;img src="image/ml_package_dl.png" width="620"&gt;&lt;/p&gt;
 
 ---
 
@@ -127,105 +108,252 @@ It's slow, but...
 
 ---
 
-# R is great for ML
-
-...because of high-performance R packages (extensions) downloaded and used millions of times.
-
-&lt;p align="center"&gt;&lt;img src="image/ml_package_dl.png" width="620"&gt;&lt;/p&gt;
-
----
-
-# `caret`
-
-.pull-left55[
-
-The &lt;high&gt;C&lt;/high&gt;lassification &lt;high&gt;A&lt;/high&gt;nd &lt;high&gt;RE&lt;/high&gt;gression &lt;high&gt;T&lt;/high&gt;raining package is a meta-package to streamline the application of R's best machine learning tools.  
-
-`caret` facilitates...&lt;br&gt;&lt;br&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1) &lt;high&gt;data pre-processing&lt;/high&gt;&lt;br&gt;&lt;br&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2) &lt;high&gt;feature selection&lt;/high&gt;&lt;br&gt;&lt;br&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3) &lt;high&gt;fitting, tuning, &amp; model prediction&lt;/high&gt;&lt;br&gt;&lt;br&gt;
-
-Includes dozens of algorithms/models including...
-
-&lt;high&gt;regression&lt;/high&gt;, &lt;high&gt;decision trees&lt;/high&gt;, &lt;high&gt;random forests&lt;/high&gt;, neural nets, AdaBoost, elastic nets, &lt;high&gt;lasso &amp; ridge regression&lt;/high&gt;, support vector machines, etc.
-
-]
-
-.pull-right4[
-&lt;p align="center"&gt;&lt;img src="image/caret.png"&gt;&lt;/p&gt;
-&lt;p align="center"&gt;&lt;img src="image/caret.png"&gt;&lt;/p&gt;
-&lt;p align="center"&gt;&lt;img src="image/caret.png"&gt;&lt;/p&gt;
-]
----
-
 &lt;div class="center_text"&gt;
   &lt;span&gt;
-  6+3+2 basic R lessons
+  10 basic R lessons
   &lt;/span&gt;
 &lt;/div&gt; 
 
+
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. &lt;high&gt;Everything is an object&lt;/high&gt;
-2. &lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors
-9. `formula` and `data` specify a model 
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+]
+
+---
+
+# 10 basic R lessons
+
+.pull-left4[
+
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
 
 .pull-right5[
+
+&lt;br&gt;
 
 &lt;p align="center"&gt;
   &lt;img src="image/assignment.png"&gt;
 &lt;/p&gt;
 
+
 ]
+
+
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. &lt;high&gt;Everything is an object&lt;/high&gt;
-2. &lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors
-9. `formula` and `data` specify a model 
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
+
 
 .pull-right5[
 
 ```r
-# an object called one_two_three
+# An object called one_two_three
 one_two_three &lt;- c(1, 2, 3)
 
-# print object
+# Print the object
+print(one_two_three)
+```
+
+```
+## [1] 1 2 3
+```
+
+```r
+# Print the object
+one_two_three
+```
+
+```
+## [1] 1 2 3
+```
+]
+
+---
+
+# 10 basic R lessons
+
+.pull-left4[
+
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+]
+
+
+.pull-right5[
+
+```r
+# An object called one_two_three
+one_two_three &lt;- c(1, 2, 3)
+
+# Calculate arithmetic mean
+mean(one_two_three)
+```
+
+```
+## [1] 2
+```
+
+]
+
+---
+
+# 10 basic R lessons
+
+.pull-left4[
+
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+]
+
+
+.pull-right5[
+
+```r
+# An object called one_two_three
+one_two_three &lt;- c(1, 2, 3)
+
+# Calculate arithmetic mean
+result &lt;- mean(one_two_three)
+
+# Use the result
+result * 10
+```
+
+```
+## [1] 20
+```
+
+]
+
+---
+
+# 10 basic R lessons
+
+.pull-left4[
+
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+]
+
+
+.pull-right5[
+
+```r
+# An object called one_two_three
+one_two_three &lt;- c(1, 2, 3)
+
+# Print the object
 one_two_three
 ```
 
@@ -234,7 +362,7 @@ one_two_three
 ```
 
 ```r
-# add 100 to the object's numbers (without &lt;- )
+# Add 100
 one_two_three + 100
 ```
 
@@ -243,44 +371,50 @@ one_two_three + 100
 ```
 
 ```r
-# print object (no &lt;-, no change!)
+# Print the object
 one_two_three
 ```
 
 ```
 ## [1] 1 2 3
 ```
+
 ]
-
-
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. &lt;high&gt;Everything is an object&lt;/high&gt;
-2. &lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors
-9. `formula` and `data` specify a model
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
+
 
 .pull-right5[
 
 ```r
-# print object
+# An object called one_two_three
+one_two_three &lt;- c(1, 2, 3)
+
+# Print the object
 one_two_three
 ```
 
@@ -289,49 +423,88 @@ one_two_three
 ```
 
 ```r
-# make change permanent (with &lt;- )
+# Add 100 and re-assign
 one_two_three &lt;- one_two_three + 100
 
-# print object (it has changed!)
+# Print the object
 one_two_three
 ```
 
 ```
 ## [1] 101 102 103
 ```
+
 ]
 
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. &lt;high&gt;Everything happens through functions&lt;/high&gt;
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors
-9. `formula` and `data` specify a model
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Everythings happens through functions&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
+
+
+.pull-right5[
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;p align="center"&gt;&lt;img src="image/input_output.png" height="300"&gt;&lt;/p&gt;
+]
+
+---
+
+# 10 basic R lessons
+
+.pull-left4[
+
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Everythings happens through functions&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+]
+
 
 .pull-right5[
 
 ```r
-# function c()
+# Function c()
 one_two_three &lt;- c(1, 2, 3)
 
-# function `+`()
+# Function `+`()
 one_two_three + 100
 ```
 
@@ -340,7 +513,7 @@ one_two_three + 100
 ```
 
 ```r
-# function print()
+# Function print()
 one_two_three
 ```
 
@@ -349,8 +522,8 @@ one_two_three
 ```
 
 ```r
-# function mean()
-mean(x = one_two_three)
+# Function mean()
+mean(one_two_three)
 ```
 
 ```
@@ -360,31 +533,35 @@ mean(x = one_two_three)
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. &lt;high&gt;Functions have (default) arguments&lt;/high&gt;
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors
-9. `formula` and `data` specify a model
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;Functions have (default) arguments&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
+
 
 .pull-right5[
 
 ```r
-# no argument
+# No argument
 mean()
 ```
 
@@ -393,7 +570,7 @@ mean()
 ```
 
 ```r
-# one (required) argument
+# One (necessary) argument
 mean(c(1, 2, 3))
 ```
 
@@ -402,16 +579,63 @@ mean(c(1, 2, 3))
 ```
 
 ```r
-# assume a missing value (NA)
+# Add a missing value
 mean(c(1, 2, 3, NA))
 ```
 
 ```
 ## [1] NA
 ```
+]
+
+---
+
+# 10 basic R lessons
+
+.pull-left4[
+
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;Functions have (default) arguments&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
 
 ```r
-# changing default to handle NA
+# No argument
+mean()
+```
+
+```
+## Error in mean.default(): argument "x" is missing, with no default
+```
+
+```r
+# One (necessary) argument
+mean(c(1, 2, 3))
+```
+
+```
+## [1] 2
+```
+
+```r
+# Change the default to handle missing
 mean(c(1, 2, 3, NA), na.rm = TRUE)
 ```
 
@@ -420,34 +644,39 @@ mean(c(1, 2, 3, NA), na.rm = TRUE)
 ```
 ]
 
+
 ---
 
-# 6+3+2 basic R lessons  
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. &lt;high&gt;Functions have (default) arguments&lt;/high&gt;
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors
-9. `formula` and `data` specify a model
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;Functions have (default) arguments&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
+
 
 .pull-right5[
 
 ```r
-# mean with pipe %&gt;%
-c(1, 2, 3) %&gt;% mean()
+# Mean of c(1, 2, 3)
+mean(c(1, 2, 3))
 ```
 
 ```
@@ -455,187 +684,255 @@ c(1, 2, 3) %&gt;% mean()
 ```
 
 ```r
-# mean with pipe %&gt;% and NA
-c(1, 2, 3, NA) %&gt;% mean()
+# Mean of c('1', '2', '3')
+mean(c("1", "2", "3"))
+```
+
+```
+## Warning in mean.default(c("1", "2", "3")): argument is not numeric or logical: returning NA
 ```
 
 ```
 ## [1] NA
 ```
-
-```r
-# changing default to handle NA
-c(1, 2, 3, NA) %&gt;% mean(na.rm = TRUE)
-```
-
-```
-## [1] 2
-```
 ]
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. &lt;high&gt;Functions live in packages&lt;/high&gt;
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors
-9. `formula` and `data` specify a model
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;&lt;high&gt;Arguments expect classes&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
+
 
 .pull-right5[
 
-&lt;p align="center"&gt;&lt;img src="image/packages.png" height="400"&gt;&lt;/p&gt;
+```r
+# Class of c(1, 2, 3)
+class(c(1, 2, 3))
+```
 
+```
+## [1] "numeric"
+```
+
+```r
+# Class of c('1', '2', '3')
+class(c("1", "2", "3"))
+```
+
+```
+## [1] "character"
+```
 ]
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. &lt;high&gt;Functions live in packages&lt;/high&gt;
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors
-9. `formula` and `data` specify a model
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
-]
-
-.pull-right5[
-
-&lt;high&gt;Install new packages&lt;/high&gt; with `install.packages()`
-
-
-```r
-# install package: Only do this once!
-install.packages("tidyverse")
-```
-
-&lt;high&gt;Load existing packages&lt;/high&gt; with `library()`
-
-
-```r
-# load package: EVERY TIME you write code
-library(tidyverse)
-```
-
-&lt;p align="center"&gt;&lt;img src="image/tidyverse.png" height="200"&gt;&lt;/p&gt;
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
 
 ]
 
----
-
-# 6+3+2 basic R lessons 
-
-.pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. &lt;high&gt;Find help with &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;
-
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors
-9. `formula` and `data` specify a model
-
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
-]
 
 .pull-right5[
 
 ```r
 ?mean
 ```
-&lt;p align="center"&gt;&lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/help.png" width="500"&gt;&lt;/p&gt;
+&lt;p align="center"&gt;&lt;img src="image/help_mean.png" width="500"&gt;&lt;/p&gt;
 ]
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. &lt;high&gt;Find help with &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors
-9. `formula` and `data` specify a model
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
+
 
 .pull-right5[
 
 ```r
-?cor
+?mean
 ```
-&lt;p align="center"&gt;&lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/help_cor.png" width="500"&gt;&lt;/p&gt;
+&lt;p align="center"&gt;&lt;img src="image/help_usage.png" width="500"&gt;&lt;/p&gt;
 ]
 
 ---
 
-class: middle, center
+# 10 basic R lessons
 
-&lt;h1&gt;&lt;a&gt;Interactive&lt;/a&gt;&lt;/h1&gt;
+.pull-left4[
+
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+]
+
+
+.pull-right5[
+
+```r
+# Mean of c(1, 2, 3)
+mean(c(1, 2, 3))
+```
+
+```
+## [1] 2
+```
+
+```r
+# Mean of c(TRUE, FALSE, TRUE)
+mean(c(TRUE, FALSE, TRUE))
+```
+
+```
+## [1] 0.6667
+```
+
+```r
+# Mean of c("1", "2", "3")
+mean(c("1", "2", "3"))
+```
+
+```
+## Warning in mean.default(c("1", "2", "3")): argument is not numeric or logical: returning NA
+```
+
+```
+## [1] NA
+```
+
+]
+
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. &lt;high&gt;Data lives in data frames&lt;/high&gt;
-8. 3 data types + factors
-9. `formula` and `data` specify a model
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7"&gt;&lt;span&gt;&lt;high&gt;Functions exist in Packages&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
+]
+
+
+.pull-right5[
+&lt;p align="center"&gt;&lt;img src="image/packages.png" height="400"&gt;&lt;/p&gt;
+]
+
+---
+
+# 10 basic R lessons
+
+.pull-left4[
+
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8"&gt;&lt;span&gt;&lt;high&gt;Data lives in data frames&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
 
 .pull-right55[
@@ -644,25 +941,28 @@ class: middle, center
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. &lt;high&gt;3 data types + factors&lt;/high&gt;
-9. `formula` and `data` specify a model 
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9"&gt;&lt;span&gt;&lt;high&gt;Three+ data types&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
 
 
@@ -673,25 +973,28 @@ class: middle, center
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. &lt;high&gt;3 data types + factors&lt;/high&gt;
-9. `formula` and `data` specify a model
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9"&gt;&lt;span&gt;&lt;high&gt;Three+ data types&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
 
 
@@ -723,26 +1026,28 @@ print(baselers)
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. &lt;high&gt;3 data types + factors&lt;/high&gt;
-9. `formula` and `data` specify a model
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9"&gt;&lt;span&gt;&lt;high&gt;Three+ data types&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
 ]
 
 .pull-right5[
@@ -783,25 +1088,28 @@ baselers[[2]]
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. &lt;high&gt;3 data types + factors&lt;/high&gt;
-9. `formula` and `data` specify a model
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9"&gt;&lt;span&gt;&lt;high&gt;Three+ data types&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10g"&gt;&lt;span&gt;Formulae&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
 
 
@@ -844,25 +1152,28 @@ as.factor(baselers$weight)
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors&lt;/high&gt;
-9. &lt;high&gt;&lt;mono&gt;formula&lt;/mono&gt; and &lt;mono&gt;data&lt;/mono&gt; specify a model&lt;/high&gt;
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10"&gt;&lt;span&gt;&lt;high&gt;Formulae&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
 
 
@@ -882,25 +1193,28 @@ my_lm &lt;- lm(formula = income ~ age + height,
 
 ---
 
-# 6+3+2 basic R lessons 
+# 10 basic R lessons
 
 .pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
 
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors&lt;/high&gt;
-9. &lt;high&gt;&lt;mono&gt;formula&lt;/mono&gt; and &lt;mono&gt;data&lt;/mono&gt; specify a model&lt;/high&gt;
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;The assignment operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Everythings happens through functions&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Functions have (default) arguments&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Arguments expect classes&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Find help using &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. Use editor, shortcuts, auto-complete
+&lt;b&gt;Analysis&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Functions exist in Packages&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Data lives in data frames&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m9g"&gt;&lt;span&gt;Three+ data types&lt;/span&gt;&lt;/li&gt;  
+  &lt;li class="m10"&gt;&lt;span&gt;&lt;high&gt;Formulae&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+
 ]
 
 
@@ -934,233 +1248,6 @@ my_lm &lt;- lm(formula = income ~ . - id,
 
 ]
 
-
----
-
-# 6+3+2 basic R lessons 
-
-.pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
-
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors&lt;/high&gt;
-9. &lt;mono&gt;formula&lt;/mono&gt; and &lt;mono&gt;data&lt;/mono&gt; specify a model
-
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. &lt;high&gt;Use RStudio and projects&lt;/high&gt;
-11. Use editor, shortcuts, auto-complete
-]
-
-.pull-right5[
-### Projects help...
-save workspace and history &amp;#9679; set project specific options &amp;#9679; access files &amp;#9679; version control &amp;#9679; etc.
-&lt;p align="left"&gt;&lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/projects_1.png" width="360"&gt;&lt;/p&gt;
-]
-
----
-
-# 6+3+2 basic R lessons 
-
-.pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
-
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors&lt;/high&gt;
-9. &lt;mono&gt;formula&lt;/mono&gt; and &lt;mono&gt;data&lt;/mono&gt; specify a model
-
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. &lt;high&gt;Use RStudio and projects&lt;/high&gt;
-11. Use editor, shortcuts, auto-complete
-]
-
-.pull-right5[
-### Folder structure
-Complement projects by a &lt;high&gt;folder structure&lt;/high&gt; appropriate for your project.
-&lt;br&gt;&lt;br&gt;
-&lt;p align="left"&gt;
-  &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/folder_structure.png"&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# 6+3+2 basic R lessons 
-
-.pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
-
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors&lt;/high&gt;
-9. &lt;mono&gt;formula&lt;/mono&gt; and &lt;mono&gt;data&lt;/mono&gt; specify a model
-
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. &lt;high&gt;Use editor, shortcuts, auto-complete&lt;/high&gt;
-]
-
-
-.pull-right5[
-
-&lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/editor_edit.png"&gt;&lt;/img&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-Shortcut to &lt;high&gt;send to console&lt;/high&gt;:&lt;br&gt;&lt;br2&gt;&lt;font size = 6&gt;&amp;#8984;/ctrl + &amp;#9166;&lt;/font&gt;&lt;br&gt;&lt;br2&gt;&lt;br2&gt;
-Shortcut to &lt;high&gt;rerun chunk&lt;/high&gt;:&lt;br&gt;&lt;br2&gt;&lt;font size = 6&gt;  &amp;#8984;/ctrl + &amp;#8679; + p&lt;/font&gt;
-]
-
-
----
-
-# 6+3+2 basic R lessons 
-
-.pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
-
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors&lt;/high&gt;
-9. &lt;mono&gt;formula&lt;/mono&gt; and &lt;mono&gt;data&lt;/mono&gt; specify a model
-
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. &lt;high&gt;Use editor, shortcuts, auto-complete&lt;/high&gt;
-]
-
-
-.pull-right5[
-
-
-```r
-# Load packages with library()
-library(tidyverse)
-library(yarrr)
-library(lme4)
-
-# import data with 
-baselers &lt;- read_delim(file = "baselers.txt",
-                       delim = '\t')
-```
-]
-
----
-
-# 6+3+2 basic R lessons 
-
-.pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
-
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors&lt;/high&gt;
-9. &lt;mono&gt;formula&lt;/mono&gt; and &lt;mono&gt;data&lt;/mono&gt; specify a model
-
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. &lt;high&gt;Use editor, shortcuts, auto-complete&lt;/high&gt;
-]
-
-.pull-right55[
-
-&lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/auto_complete_1.png"&gt;&lt;/img&gt;
-
-]
-
----
-
-# 6+3+2 basic R lessons 
-
-.pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
-
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors&lt;/high&gt;
-9. &lt;mono&gt;formula&lt;/mono&gt; and &lt;mono&gt;data&lt;/mono&gt; specify a model
-
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. &lt;high&gt;Use editor, shortcuts, auto-complete&lt;/high&gt;
-]
-
-.pull-right55[
-
-&lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/auto_complete_2.png"&gt;&lt;/img&gt;
-
-]
-
----
-
-# 6+3+2 basic R lessons 
-
-.pull-left4[
-&lt;i&gt;R essentials&lt;/i&gt;
-1. Everything is an object
-2. &lt;mono&gt;&lt;-&lt;/mono&gt; creates/changes objects
-3. Everything happens through functions
-4. Functions have (default) arguments
-5. Functions live in packages
-6. Find help with &lt;mono&gt;?&lt;/mono&gt;
-
-&lt;i&gt;Analytic essentials&lt;/i&gt;
-7. Data lives in data frames
-8. 3 data types + factors&lt;/high&gt;
-9. &lt;mono&gt;formula&lt;/mono&gt; and &lt;mono&gt;data&lt;/mono&gt; specify a model
-
-&lt;i&gt;Productivity essentials&lt;/i&gt;
-10. Use RStudio and projects
-11. &lt;high&gt;Use editor, shortcuts, auto-complete&lt;/high&gt;
-]
-
-.pull-right55[
-
-&lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/auto_complete_3.png"&gt;&lt;/img&gt;
-
-]
-
-
----
-
-class: middle, center
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/ML_2019Oct/1_Data/baselrbootcamp_MLdata.zip"&gt;Download&lt;/a&gt;&lt;/h1&gt;
 
 ---
 

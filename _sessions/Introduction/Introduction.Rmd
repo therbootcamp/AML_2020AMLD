@@ -238,6 +238,6 @@ Be interactive! <high>Ask questions!</high>
 ---
 class: middle, center
 
-<h1><a href=https://therbootcamp.github.io/ML_2019Oct/index.html>Schedule</a></h1>
+<h1><a href=https://therbootcamp.github.io/AML_2020AMLD/index.html>Schedule</a></h1>
 
 

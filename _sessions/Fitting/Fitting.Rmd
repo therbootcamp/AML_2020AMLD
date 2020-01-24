@@ -190,10 +190,13 @@ logreg2 = logreg1 +
 
 <p style="padding-top:1px"></p>
 
-Models are actually <high>families of models</high>, with every parameter combination specifying a different model. 
+<b>Syntax</b>
+<ul>
+  <li class="m1"><span>Models are actually <high>families of models</high>, with every parameter combination specifying a different model.</span></li>
+  <li class="m2"><span>To fit a model means to <high>identify</high> from the family of models <high>the specific model that fits the data best</high>.</span></li>
+</ul>
 
-To fit a model means to <high>identify</high> from the family of models <high>the specific model that fits the data best</high>. 
-
+ 
 ]
 
 .pull-right45[
@@ -231,17 +234,19 @@ ggarrange(bad_err, great_err, ncol = 2, nrow = 1)
 
 .pull-left45[
 
-Possible <high>the most important concept</high> in statistics and machine learning.
 
-The loss function defines some <high>summary of the errors committed by the model</high>.
+<b>Syntax</b>
+<ul>
+  <li class="m1"><span>Possible <high>the most important concept</high> in statistics and machine learning.</span></li>
+  <li class="m2"><span>The loss function defines some <high>summary of the errors committed by the model</high>.</span></li>
+</ul>
+
 
 <p style="padding-top:7px">
 
 $$\Large Loss = f(Error)$$
 
 <p style="padding-top:7px">
-
-<u>Two purposes</u>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
 <tr>

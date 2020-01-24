@@ -330,7 +330,7 @@ class: center, middle
   <br><br>
   <ul class="level">
     <li><span>1 - <high>Split</high> nodes to maximize <b>purity gain</b> (e.g., Gini gain).</span></li><br>
-    <li><span>2 - <high>Repeat</high> until pre-defined threshold (e.g., `minsplit`) splits are no longer possible.</span></li><br>
+    <li><span>2 - <high>Repeat</high> until pre-defined threshold (e.g., <mono>minsplit</mono>) splits are no longer possible.</span></li><br>
     <li><span>3 - <high>Prune</high> tree to reasonable size.</span></li>
   </ul>
   </span></li>

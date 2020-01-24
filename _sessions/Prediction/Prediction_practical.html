@@ -366,7 +366,7 @@ criterion_train &lt;- XXX$XXX</code></pre>
 <li>Using <code>postResample()</code>, determine the fitting performance of each of your models separately. Make sure to set your <code>criterion_train</code> values to the <code>obs</code> argument, and your true model fits <code>XX_fitted</code> to the <code>pred</code> argument.</li>
 </ol>
 <pre class="r"><code># Calculate fitting accuracies of each model
-# pred = XX_fit
+# pred = XX_fitted
 # obs = criterion_train
 
 # Regression
@@ -530,10 +530,10 @@ rf_fitted &lt;- predict(XXX)</code></pre>
 <pre class="r"><code># Save training criterion values
 criterion_train &lt;- XXX$XXX</code></pre>
 <ol start="14" style="list-style-type: decimal">
-<li>Using <code>postResample()</code>, determine the fitting performance of each of your models separately. Make sure to set your <code>criterion_train</code> values to the <code>obs</code> argument, and your true model fits <code>XX_fit</code> to the <code>pred</code> argument.</li>
+<li>Using <code>postResample()</code>, determine the fitting performance of each of your models separately. Make sure to set your <code>criterion_train</code> values to the <code>obs</code> argument, and your true model fits <code>XX_fitted</code> to the <code>pred</code> argument.</li>
 </ol>
 <pre class="r"><code># Calculate fitting accuracies of each model
-# pred = XX_fit
+# pred = XX_fitted
 # obs = criterion_train
 
 # Regression
@@ -666,10 +666,10 @@ hwy_glm$finalModel
 summary(hwy_glm)
 
 # Save fitted values
-glm_fit &lt;- predict(hwy_glm)
+glm_fitted &lt;- predict(hwy_glm)
 
 #  Calculate fitting accuracies
-postResample(pred = glm_fit, 
+postResample(pred = glm_fitted, 
              obs = criterion_train)
 
 # Decision Trees ----------------
@@ -700,18 +700,18 @@ hwy_rf &lt;- train(form = hwy ~ year + cyl + displ,
 hwy_rf$finalModel
 
 # Save fitted values
-rf_fit &lt;- predict(hwy_rf)
+rf_fitted &lt;- predict(hwy_rf)
 
 # Calculate fitting accuracies
-postResample(pred = rf_fit, obs = criterion_train)
+postResample(pred = rf_fitted, obs = criterion_train)
 
 # Visualise Accuracy -------------------------
 
 # Tidy competition results
 accuracy &lt;- tibble(criterion_train = criterion_train,
-                   Regression = glm_fit,
+                   Regression = glm_fitted,
                    DecisionTrees = rpart_predfit,
-                   RandomForest = rf_fit) %&gt;%
+                   RandomForest = rf_fitted) %&gt;%
                gather(model, prediction, -criterion_train) %&gt;%
                # Add error measures
                mutate(se = prediction - criterion_train,

@@ -195,9 +195,9 @@ hist(XXX)
 ```
 
 ```{r}
-glm_fit[1:10]   # Only printing first 10
-summary(glm_fit)
-hist(glm_fit)
+glm_fitted[1:10]   # Only printing first 10
+summary(glm_fitted)
+hist(glm_fitted)
 ```
 
 #### Decision Trees
@@ -306,9 +306,9 @@ hist(XXX)
 ```
 
 ```{r}
-rf_fit[1:10]    # Only first 10
-summary(rf_fit)
-hist(rf_fit)
+rf_fitted[1:10]    # Only first 10
+summary(rf_fitted)
+hist(rf_fitted)
 ```
 
 #### Assess accuracy
@@ -328,7 +328,7 @@ criterion_train <- college_train$Grad.Rate
 
 ```{r, echo = TRUE, eval = FALSE}
 # Calculate fitting accuracies of each model
-# pred = XX_fit
+# pred = XX_fitted
 # obs = criterion_train
 
 # Regression
@@ -357,9 +357,9 @@ postResample(pred = rf_fitted, obs = criterion_train)
 ```{r}
 
 accuracy <- tibble(criterion_train = criterion_train,
-                   Regression = glm_fit,
+                   Regression = glm_fitted,
                    DecisionTrees = rpart_predfit,
-                   RandomForest = rf_fit) %>%
+                   RandomForest = rf_fitted) %>%
                gather(model, prediction, -criterion_train) %>%
                # Add error measures
                mutate(se = prediction - criterion_train,
@@ -672,11 +672,11 @@ criterion_train <- XXX$XXX
 criterion_train <- house_train$price
 ```
 
-14. Using `postResample()`, determine the fitting performance of each of your models separately. Make sure to set your `criterion_train` values to the `obs` argument, and your true model fits `XX_fit` to the `pred` argument.
+14. Using `postResample()`, determine the fitting performance of each of your models separately. Make sure to set your `criterion_train` values to the `obs` argument, and your true model fits `XX_fitted` to the `pred` argument.
 
 ```{r, echo = TRUE, eval = FALSE}
 # Calculate fitting accuracies of each model
-# pred = XX_fit
+# pred = XX_fitted
 # obs = criterion_train
 
 # Regression
@@ -691,7 +691,7 @@ postResample(pred = XXX, obs = XXX)
 
 ```{r}
 # Calculate fitting accuracies of each model
-# pred = XX_fit
+# pred = XX_fitted
 # obs = criterion_train
 
 # Regression
@@ -710,9 +710,9 @@ postResample(pred = rf_fitted, obs = criterion_train)
 ```{r}
 # Tidy competition results
 accuracy <- tibble(criterion_train = criterion_train,
-                   Regression = glm_fit,
+                   Regression = glm_fitted,
                    DecisionTrees = rpart_predfit,
-                   RandomForest = rf_fit) %>%
+                   RandomForest = rf_fitted) %>%
                gather(model, prediction, -criterion_train) %>%
                # Add error measures
                mutate(se = prediction - criterion_train,
@@ -907,10 +907,10 @@ hwy_glm$finalModel
 summary(hwy_glm)
 
 # Save fitted values
-glm_fit <- predict(hwy_glm)
+glm_fitted <- predict(hwy_glm)
 
 #  Calculate fitting accuracies
-postResample(pred = glm_fit, 
+postResample(pred = glm_fitted, 
              obs = criterion_train)
 
 # Decision Trees ----------------
@@ -941,18 +941,18 @@ hwy_rf <- train(form = hwy ~ year + cyl + displ,
 hwy_rf$finalModel
 
 # Save fitted values
-rf_fit <- predict(hwy_rf)
+rf_fitted <- predict(hwy_rf)
 
 # Calculate fitting accuracies
-postResample(pred = rf_fit, obs = criterion_train)
+postResample(pred = rf_fitted, obs = criterion_train)
 
 # Visualise Accuracy -------------------------
 
 # Tidy competition results
 accuracy <- tibble(criterion_train = criterion_train,
-                   Regression = glm_fit,
+                   Regression = glm_fitted,
                    DecisionTrees = rpart_predfit,
-                   RandomForest = rf_fit) %>%
+                   RandomForest = rf_fitted) %>%
                gather(model, prediction, -criterion_train) %>%
                # Add error measures
                mutate(se = prediction - criterion_train,

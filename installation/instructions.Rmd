@@ -1,5 +1,5 @@
 ---
-title: "Applied Machine Learning"
+title: "Applied Machine Learning with R"
 subtitle: ""
 author: "<a href='https://therbootcamp.github.io'>
         <i class='fas fa-home' style='font-size:1em;'></i>

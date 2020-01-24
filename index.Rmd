@@ -48,7 +48,7 @@ Before attending, please...
 |2| [Fitting](_sessions/Fitting/Fitting.html), [practical](_sessions/Fitting/Fitting_practical.html) | 
 |3| [Prediction](_sessions/Prediction/Prediction.html), [practical](_sessions/Prediction/Prediction_practical.html) | 
 |4| [Tuning](_sessions/Tuning/Tuning.html), [practical](_sessions/Tuning/Tuning_practical.html) | 
-|4| [Wrap-up](_sessions/Wrapup/Wrapup.html) | 
+|5| [Wrap-up](_sessions/Wrapup/Wrapup.html) | 
 <br>
 
 

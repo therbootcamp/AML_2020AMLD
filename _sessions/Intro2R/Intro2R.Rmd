@@ -809,6 +809,53 @@ mean(c("1", "2", "3"))
 
 <b>Analysis</b>
 <ul>
+  <li class="m7"><span><high>Functions exist in Packages</high></span></li>
+  <li class="m8g"><span>Data lives in data frames</span></li>  
+  <li class="m9g"><span>Three+ data types</span></li>  
+  <li class="m10g"><span>Formulae</span></li>  
+</ul>
+
+]
+
+
+
+.pull-right5[
+
+<high>Install</high> packages <high>once</high> using `install.packages()`
+
+```{r, eval = FALSE}
+install.packages("tidyverse")
+```
+<br2>
+<high>Attach</high> existing packages <high>every time</high> using `library()`
+
+```{r, eval = FALSE}
+library(tidyverse)
+```
+
+<p align="left"><img src="image/tidyverse.png" height="180"></p>
+]
+
+
+
+---
+
+# 10 basic R lessons
+
+.pull-left4[
+
+<b>Syntax</b>
+<ul>
+  <li class="m1g"><span>The assignment operator <mono><-</mono></span></li>
+  <li class="m2g"><span><mono><-</mono> creates/changes objects</high></span></li>
+  <li class="m3g"><span>Everythings happens through functions</span></li>
+  <li class="m4g"><span>Functions have (default) arguments</span></li>
+  <li class="m5g"><span>Arguments expect classes</span></li>
+  <li class="m6g"><span>Find help using <mono>?</mono></span></li>
+</ul>
+
+<b>Analysis</b>
+<ul>
   <li class="m7g"><span>Functions exist in Packages</span></li>
   <li class="m8"><span><high>Data lives in data frames</high></span></li>  
   <li class="m9g"><span>Three+ data types</span></li>  

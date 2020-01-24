@@ -330,7 +330,7 @@ class: center, middle
   <br><br>
   <ul class="level">
     <li><span>1 - <high>Split</high> nodes to maximize <b>purity gain</b> (e.g., Gini gain).</span></li><br>
-    <li><span>2 - <high>Repeat</high> until pre-defined threshold (e.g., `minsplit`) splits are no longer possible.</span></li><br>
+    <li><span>2 - <high>Repeat</high> until pre-defined threshold (e.g., <mono>minsplit</mono>) splits are no longer possible.</span></li><br>
     <li><span>3 - <high>Prune</high> tree to reasonable size.</span></li>
   </ul>
   </span></li>
@@ -722,7 +722,7 @@ baselers_test <- baselers %>%
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>To <high>test model predictions</high> with `caret`, all you need to do is get a vector of predictions from a new dataframe `newdata` using the `predict()` function.</span></li>
+  <li class="m1"><span>To <high>test model predictions</high> with <mono>caret</mono>, all you need to do is get a vector of predictions from a new dataframe <mono>newdata</mono> using the <mono>predict()</mono> function.</span></li>
 </ul>
 
 <br>

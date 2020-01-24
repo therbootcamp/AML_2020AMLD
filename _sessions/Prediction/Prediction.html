@@ -214,7 +214,7 @@ class: center, middle
   &lt;br&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
     &lt;li&gt;&lt;span&gt;1 - &lt;high&gt;Split&lt;/high&gt; nodes to maximize &lt;b&gt;purity gain&lt;/b&gt; (e.g., Gini gain).&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
-    &lt;li&gt;&lt;span&gt;2 - &lt;high&gt;Repeat&lt;/high&gt; until pre-defined threshold (e.g., `minsplit`) splits are no longer possible.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;2 - &lt;high&gt;Repeat&lt;/high&gt; until pre-defined threshold (e.g., &lt;mono&gt;minsplit&lt;/mono&gt;) splits are no longer possible.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
     &lt;li&gt;&lt;span&gt;3 - &lt;high&gt;Prune&lt;/high&gt; tree to reasonable size.&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;/span&gt;&lt;/li&gt;
@@ -602,7 +602,7 @@ baselers_test &lt;- baselers %&gt;%
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;To &lt;high&gt;test model predictions&lt;/high&gt; with `caret`, all you need to do is get a vector of predictions from a new dataframe `newdata` using the `predict()` function.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;To &lt;high&gt;test model predictions&lt;/high&gt; with &lt;mono&gt;caret&lt;/mono&gt;, all you need to do is get a vector of predictions from a new dataframe &lt;mono&gt;newdata&lt;/mono&gt; using the &lt;mono&gt;predict()&lt;/mono&gt; function.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;br&gt;
@@ -713,7 +713,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 (function() {

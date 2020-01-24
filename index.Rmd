@@ -43,12 +43,12 @@ Before attending, please...
 
 |  | Day 1 |
 |:--|:-------------|
-|0| [Intro](https://raw.githubusercontent.com/therbootcamp/AML_2020AMLD/master/_sessions/Introduction/introduction.html)  | 
-|1| [Intro to R](https://raw.githubusercontent.com/therbootcamp/AML_2020AMLD/master/_sessions/Introduction/introduction.html) | 
-|2| [Fitting](https://raw.githubusercontent.com/therbootcamp/AML_2020AMLD/master/_sessions/Fitting/Fitting.html), [practical](https://raw.githubusercontent.com/therbootcamp/AML_2020AMLD/master/_sessions/Fitting/Fitting_practical.html) | 
-|3| [Prediction](https://raw.githubusercontent.com/therbootcamp/AML_2020AMLD/master/_sessions/Prediction/Prediction.html), [practical](https://raw.githubusercontent.com/therbootcamp/AML_2020AMLD/master/_sessions/Prediction/Prediction_practical.html) | 
-|4| [Tuning](https://raw.githubusercontent.com/therbootcamp/AML_2020AMLD/master/_sessions/Tuning/Tuning.html), [practical](https://raw.githubusercontent.com/therbootcamp/AML_2020AMLD/master/_sessions/Tuning/Tuning_practical.html) | 
-|4| [Wrap-up](https://raw.githubusercontent.com/therbootcamp/AML_2020AMLD/master/_sessions/Wrapup/Wrapup.html) | 
+|0| [Intro](_sessions/Introduction/introduction.html)  | 
+|1| [Intro to R](_sessions/Introduction/introduction.html) | 
+|2| [Fitting](_sessions/Fitting/Fitting.html), [practical](_sessions/Fitting/Fitting_practical.html) | 
+|3| [Prediction](_sessions/Prediction/Prediction.html), [practical](_sessions/Prediction/Prediction_practical.html) | 
+|4| [Tuning](_sessions/Tuning/Tuning.html), [practical](_sessions/Tuning/Tuning_practical.html) | 
+|4| [Wrap-up](_sessions/Wrapup/Wrapup.html) | 
 <br>
 
 

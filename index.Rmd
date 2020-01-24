@@ -1,5 +1,5 @@
 ---
-title: "Applied Machine Learning"
+title: "Applied Machine Learning with R"
 subtitle: ""
 author: "
       <a href='https://therbootcamp.github.io'>
@@ -43,7 +43,7 @@ Before attending, please...
 
 |  | Day 1 |
 |:--|:-------------|
-|0| [Intro](_sessions/Introduction/introduction.html)  | 
+|0| [Intro](_sessions/Introduction/Introduction.html)  | 
 |1| [Intro to R](_sessions/Introduction/introduction.html) | 
 |2| [Fitting](_sessions/Fitting/Fitting.html), [practical](_sessions/Fitting/Fitting_practical.html) | 
 |3| [Prediction](_sessions/Prediction/Prediction.html), [practical](_sessions/Prediction/Prediction_practical.html) | 

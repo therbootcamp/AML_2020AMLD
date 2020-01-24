@@ -280,12 +280,12 @@ summary(XXX)</code></pre>
 <ol style="list-style-type: decimal">
 <li>Now it’s time to evaluate the model’s fitted values! Use the following code to save the fitted values as <code>glm_fitted</code>.</li>
 </ol>
-<pre class="r"><code># Get fitted values from the Grad.Rate_glm model and save as glm_fit
+<pre class="r"><code># Get fitted values from the Grad.Rate_glm model and save as glm_fitted
 glm_fitted &lt;- predict(XXX)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Plot the distribution of your <code>glm_fitted</code> object using the code below - what are these values? Do they look reasonable? That is, are they in the range of what you expect the criterion to be?</li>
 </ol>
-<pre class="r"><code># Plot glm_fit
+<pre class="r"><code># Plot glm_fitted
 hist(XXX)</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Now it’s time to compare your model fits to the true values. We’ll start by defining the vector <code>criterion</code> as the actual graduation rates.</li>
@@ -297,7 +297,7 @@ criterion &lt;- college_train$Grad.Rate</code></pre>
 </ol>
 <p>Specifically,</p>
 <ul>
-<li>set the <code>pred</code> argument to <code>glm_fit</code> (your fitted values).</li>
+<li>set the <code>pred</code> argument to <code>glm_fitted</code> (your fitted values).</li>
 <li>set the <code>obs</code> argument to <code>criterion</code> (a vector of the criterion values).</li>
 </ul>
 <pre class="r"><code># Regression Fitting Accuracy
@@ -313,7 +313,7 @@ postResample(pred = XXX,   # Fitted values
 </ul>
 <pre class="r"><code># accuracy - a dataframe of raw absolute errors
 accuracy &lt;- tibble(criterion = criterion,
-                   Regression = glm_fit) %&gt;%
+                   Regression = glm_fitted) %&gt;%
                 gather(model, prediction, -criterion) %&gt;%
                 # Add error measures
                 mutate(ae = abs(prediction - criterion))
@@ -498,7 +498,7 @@ glm_fitted &lt;- predict(XXX)</code></pre>
 <li>set the <code>data</code> argument to your <code>glm_fitted</code> values.</li>
 <li>set the <code>reference</code> argument to the <code>criterion</code> values.</li>
 </ul>
-<pre class="r"><code># Show accuracy of glm_fit versus the true criterion values
+<pre class="r"><code># Show accuracy of glm_fitted versus the true criterion values
 confusionMatrix(data = XXX,      # This is the prediction!
                 reference = XXX) # This is the truth!</code></pre>
 <ol start="4" style="list-style-type: decimal">
@@ -506,7 +506,7 @@ confusionMatrix(data = XXX,      # This is the prediction!
 <li><p>To visualize the accuracy of your classification models, use the following code to create a bar plot.</p></li>
 </ol>
 <pre class="r"><code># Get overall accuracy from regression model
-glm_accuracy &lt;- confusionMatrix(data =  glm_fit,  
+glm_accuracy &lt;- confusionMatrix(data =  glm_fitted,  
                                 reference = criterion)$overall[1]
 
 # Combine results into one table
@@ -575,13 +575,13 @@ summary(hwy_glm)
 # Step 4: Access fit ------------------------------
 
 # Save fitted values
-glm_fit &lt;- predict(hwy_glm)
+glm_fitted &lt;- predict(hwy_glm)
 
 # Define data_train$hwy as the true criterion
 criterion &lt;- data_train$hwy
 
 # Regression Fitting Accuracy
-postResample(pred = glm_fit, 
+postResample(pred = glm_fitted, 
              obs = criterion)
 
 #     RMSE Rsquared      MAE 
@@ -594,7 +594,7 @@ postResample(pred = glm_fit,
 
 # Tidy competition results
 accuracy &lt;- tibble(criterion = criterion,
-                   Regression = glm_fit) %&gt;%
+                   Regression = glm_fitted) %&gt;%
                gather(model, prediction, -criterion) %&gt;%
   
   # Add error measures

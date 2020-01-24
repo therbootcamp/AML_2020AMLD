@@ -194,19 +194,19 @@ summary(Grad.Rate_glm)
 1. Now it's time to evaluate the model's fitted values! Use the following code to save the fitted values as `glm_fitted`. 
 
 ```{r, echo = TRUE, eval = FALSE}
-# Get fitted values from the Grad.Rate_glm model and save as glm_fit
+# Get fitted values from the Grad.Rate_glm model and save as glm_fitted
 glm_fitted <- predict(XXX)
 ```
 
 ```{r}
-# Get fitted values from the model and save as glm_fit
+# Get fitted values from the model and save as glm_fitted
 glm_fitted <- predict(Grad.Rate_glm)
 ```
 
 2. Plot the distribution of your `glm_fitted` object using the code below - what are these values? Do they look reasonable? That is, are they in the range of what you expect the criterion to be?
 
 ```{r, echo = TRUE}
-# Plot glm_fit
+# Plot glm_fitted
 hist(XXX)
 ```
 
@@ -225,7 +225,7 @@ criterion <- college_train$Grad.Rate
 
 Specifically,
 
-- set the `pred` argument to `glm_fit` (your fitted values).
+- set the `pred` argument to `glm_fitted` (your fitted values).
 - set the `obs` argument to `criterion` (a vector of the criterion values).
 
 ```{r, echo = TRUE, eval = FALSE}
@@ -236,7 +236,7 @@ postResample(pred = XXX,   # Fitted values
 
 ```{r}
 # Regression Fitting Accuracy
-postResample(pred = glm_fit,   # Fitted values 
+postResample(pred = glm_fitted,   # Fitted values 
              obs = criterion)  # criterion values
 ```
 
@@ -254,7 +254,7 @@ postResample(pred = glm_fit,   # Fitted values
 ```{r, echo = TRUE}
 # accuracy - a dataframe of raw absolute errors
 accuracy <- tibble(criterion = criterion,
-                   Regression = glm_fit) %>%
+                   Regression = glm_fitted) %>%
                 gather(model, prediction, -criterion) %>%
                 # Add error measures
                 mutate(ae = abs(prediction - criterion))
@@ -393,7 +393,7 @@ postResample(pred = XXX,   # Fitted values
 
 ```{r}
 # New model fitting accuracy
-postResample(pred = glm_fit,   # Fitted values 
+postResample(pred = glm_fitted,   # Fitted values 
              obs = criterion)  # criterion values
 ```
 
@@ -406,7 +406,7 @@ postResample(pred = glm_fit,   # Fitted values
 ```{r, out.width = "60%"}
 # accuracy: a dataframe of raw absolute errors
 accuracy <- tibble(criterion = criterion,
-                   Regression = glm_fit) %>%
+                   Regression = glm_fitted) %>%
                 gather(model, prediction, -criterion) %>%
   
   # Add error measures
@@ -501,7 +501,7 @@ glm_fitted <- predict(Grad.Rate_glm)
 ```{r}
 
 # New model fitting accuracy
-postResample(pred = glm_fit,   # Fitted values 
+postResample(pred = glm_fitted,   # Fitted values 
              obs = criterion)  # criterion values
 ```
 
@@ -510,7 +510,7 @@ postResample(pred = glm_fit,   # Fitted values
 ```{r, out.width = "60%"}
 # accuracy: a dataframe of raw absolute errors
 accuracy <- tibble(criterion = criterion,
-                   Regression = glm_fit) %>%
+                   Regression = glm_fitted) %>%
                 gather(model, prediction, -criterion) %>%
   
   # Add error measures
@@ -636,7 +636,7 @@ glm_fitted <- predict(Private_glm)
 2. Plot the values of your `glm_fitted` object - what are these values? Do they look reasonable?
 
 ```{r}
-# Plot glm_fit
+# Plot glm_fitted
 plot(glm_fitted)
 ```
 
@@ -646,15 +646,15 @@ plot(glm_fitted)
 - set the `reference` argument to the `criterion` values.
 
 ```{r, eval = FALSE, echo = TRUE}
-# Show accuracy of glm_fit versus the true criterion values
+# Show accuracy of glm_fitted versus the true criterion values
 confusionMatrix(data = XXX,      # This is the prediction!
                 reference = XXX) # This is the truth!
 ```
 
 
 ```{r}
-# Show accuracy of glm_fit versus the true values
-confusionMatrix(data = glm_fit,        # This is the prediction!
+# Show accuracy of glm_fitted versus the true values
+confusionMatrix(data = glm_fitted,        # This is the prediction!
                 reference = criterion) # This is the truth!
 ```
 
@@ -669,7 +669,7 @@ confusionMatrix(data = glm_fit,        # This is the prediction!
 
 ```{r echo = TRUE}
 # Get overall accuracy from regression model
-glm_accuracy <- confusionMatrix(data =  glm_fit,  
+glm_accuracy <- confusionMatrix(data =  glm_fitted,  
                                 reference = criterion)$overall[1]
 
 # Combine results into one table
@@ -740,13 +740,13 @@ summary(hwy_glm)
 # Step 4: Access fit ------------------------------
 
 # Save fitted values
-glm_fit <- predict(hwy_glm)
+glm_fitted <- predict(hwy_glm)
 
 # Define data_train$hwy as the true criterion
 criterion <- data_train$hwy
 
 # Regression Fitting Accuracy
-postResample(pred = glm_fit, 
+postResample(pred = glm_fitted, 
              obs = criterion)
 
 #     RMSE Rsquared      MAE 
@@ -759,7 +759,7 @@ postResample(pred = glm_fit,
 
 # Tidy competition results
 accuracy <- tibble(criterion = criterion,
-                   Regression = glm_fit) %>%
+                   Regression = glm_fitted) %>%
                gather(model, prediction, -criterion) %>%
   
   # Add error measures

@@ -903,7 +903,7 @@ knitr::include_graphics("https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Specify the use of k-fold cross-validation using the `trainControl()` function.</span></li>
+  <li class="m1"><span>Specify the use of k-fold cross-validation using the <mono>trainControl()</mono> function.</span></li>
 </ul>
 
 <br>
@@ -922,7 +922,7 @@ knitr::include_graphics("https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl
     <mono>method</mono>
   </td>
   <td bgcolor="white">
-    The resampling method, use `"cv"` for cross validation.
+    The resampling method, use <mono>"cv"</mono> for cross validation.
   </td>  
 </tr>
 <tr>

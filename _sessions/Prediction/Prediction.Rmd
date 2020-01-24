@@ -722,7 +722,7 @@ baselers_test <- baselers %>%
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>To <high>test model predictions</high> with `caret`, all you need to do is get a vector of predictions from a new dataframe `newdata` using the `predict()` function.</span></li>
+  <li class="m1"><span>To <high>test model predictions</high> with <mono>caret</mono>, all you need to do is get a vector of predictions from a new dataframe <mono>newdata</mono> using the <mono>predict()</mono> function.</span></li>
 </ul>
 
 <br>

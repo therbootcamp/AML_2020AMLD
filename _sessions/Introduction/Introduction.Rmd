@@ -531,7 +531,7 @@ Based on <high>data</high> from past patients <high>at this hospital</high>, a <
 
 
 <ul>
-  <li class="m1"><span><high>Components</high>
+  <li class="m1"><span><high>Core steps</high>
   <br><br>
   <ul class="level">
     <li><span>Fitting</span></li>

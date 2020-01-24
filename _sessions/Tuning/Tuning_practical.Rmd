@@ -48,7 +48,7 @@ set.seed(100)
 ```{r, message = FALSE, eval = TRUE, echo = FALSE}
 # Load datasets locally
 library(tidyverse)
-college_train <- read_csv("_Data/college_train.csv")
+college_train <- read_csv("1_Data/college_train.csv")
 college_test <- read_csv("1_Data/college_test.csv")
 house_train <- read_csv("1_Data/house_train.csv")
 house_test <- read_csv("1_Data/house_test.csv")

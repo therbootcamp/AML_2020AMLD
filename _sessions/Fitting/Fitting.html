@@ -12,8 +12,8 @@
 class: center, middle, inverse, title-slide
 
 # Fitting
-### Applied Machine Learning with R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp @ AMLD </a> <br> <a href='https://therbootcamp.github.io/ML_2019Oct/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-### October 2019
+### Applied Machine Learning with R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp @ AMLD </a> <br> <a href='https://therbootcamp.github.io/AML_2020AMLD/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### January 2020
 
 ---
 
@@ -34,7 +34,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Machine Learning with R | October 2019
+      Applied Machine Learning with R @ AMLD  | January 2020
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -56,7 +56,6 @@ layout: true
 
 &lt;p style="padding-top:1px"&gt;&lt;/p&gt;
 
-&lt;b&gt;Syntax&lt;/b&gt;
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Models are actually &lt;high&gt;families of models&lt;/high&gt;, with every parameter combination specifying a different model.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;To fit a model means to &lt;high&gt;identify&lt;/high&gt; from the family of models &lt;high&gt;the specific model that fits the data best&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
@@ -96,8 +95,6 @@ layout: true
 
 .pull-left45[
 
-
-&lt;b&gt;Syntax&lt;/b&gt;
 &lt;ul&gt;
   &lt;li class="m1"&gt;&lt;span&gt;Possible &lt;high&gt;the most important concept&lt;/high&gt; in statistics and machine learning.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;The loss function defines some &lt;high&gt;summary of the errors committed by the model&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
@@ -200,11 +197,25 @@ If `\(\beta_{i} = 0\)`, then `\(X_{i}\)` &lt;high&gt;does not help&lt;/high&gt; 
 
 &lt;p&gt;
 
-&lt;font style="font-size:24"&gt;&lt;b&gt; Mean Squared Error (MSE)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;high&gt;Average squared distance&lt;/high&gt; between predictions and true values?&lt;br&gt;
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Mean Squared Error (MSE)&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Average &lt;high&gt;squared distance&lt;/high&gt; between predictions and true values.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-$$ MSE = \frac{1}{n}\sum_{i \in 1,...,n}(Y_{i} - \hat{Y}_{i})^{2}$$
+`$$MSE = \frac{1}{n}\sum_{i \in 1,...,n}(Y_{i} - \hat{Y}_{i})^{2}$$`
 
-&lt;br&gt;&lt;font style="font-size:24"&gt;&lt;b&gt; Mean Absolute Error (MAE)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;high&gt;Average absolute distance&lt;/high&gt; between predictions and true values?&lt;br&gt;
+&lt;ul&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;b&gt;Mean Absolute Error (MAE)&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Average &lt;high&gt;absolute distance&lt;/high&gt; between predictions and true values.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 $$ MAE = \frac{1}{n}\sum_{i \in 1,...,n} \lvert Y_{i} - \hat{Y}_{i} \rvert$$
 
@@ -223,27 +234,41 @@ $$ MAE = \frac{1}{n}\sum_{i \in 1,...,n} \lvert Y_{i} - \hat{Y}_{i} \rvert$$
 
 ---
 
-# Fitting
-
 .pull-left45[
 
-There are two fundamentally different ways to find the set of parameters that minimizes loss.
+# Fitting
 
-&lt;font style="font-size:24"&gt;&lt;b&gt; Analytically &lt;/b&gt;
+&lt;p style="margin-top:20px"&gt;
 
-In rare cases, the parameters can be &lt;high&gt;directly calculated&lt;/high&gt;, e.g., using the &lt;i&gt;normal equation&lt;/i&gt;: 
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Analytically&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;In rare cases, the parameters can be &lt;high&gt;directly calculated&lt;/high&gt;, e.g., using the &lt;i&gt;normal equation&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 `$$\boldsymbol \beta = (\boldsymbol X^T\boldsymbol X)^{-1}\boldsymbol X^T\boldsymbol y$$`
 
-&lt;font style="font-size:24"&gt;&lt;b&gt; Numerically &lt;/b&gt;
-
-In most cases, parameters need to be found using a &lt;high&gt;directed trial and error&lt;/high&gt;, e.g., &lt;i&gt;gradient descent&lt;/i&gt;: 
+&lt;ul&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;b&gt;Numerically&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;In most cases, parameters need to be found using a &lt;high&gt;directed trial and error&lt;/high&gt;, e.g., &lt;i&gt;gradient descent&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 `$$\boldsymbol \beta_{n+1} = \boldsymbol \beta_{n}+\gamma \nabla F(\boldsymbol \beta_{n})$$`
+
+&lt;/p&gt;
 
 ]
 
 .pull-right45[
+
+&lt;br&gt;&lt;br&gt;
 
 &lt;p align = "center"&gt;
 &lt;img src="image/gradient.png" height=420px&gt;&lt;br&gt;
@@ -255,26 +280,37 @@ In most cases, parameters need to be found using a &lt;high&gt;directed trial an
 
 ---
 
+
 .pull-left45[
 
 # Fitting
 
-&lt;p style="padding-top:1px"&gt;&lt;/p&gt;
 
-There are two fundamentally different ways to find the set of parameters that minimizes loss.
+&lt;p style="margin-top:10px"&gt;
 
-&lt;font style="font-size:24"&gt;&lt;b&gt; Analytically &lt;/b&gt;
-
-In rare cases, the parameters can be &lt;high&gt;directly calculated&lt;/high&gt;, e.g., using the &lt;i&gt;normal equation&lt;/i&gt;: 
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Analytically&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;In rare cases, the parameters can be &lt;high&gt;directly calculated&lt;/high&gt;, e.g., using the &lt;i&gt;normal equation&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 `$$\boldsymbol \beta = (\boldsymbol X^T\boldsymbol X)^{-1}\boldsymbol X^T\boldsymbol y$$`
 
-&lt;font style="font-size:24"&gt;&lt;b&gt; Numerically &lt;/b&gt;
-
-In most cases, parameters need to be found using a &lt;high&gt;directed trial and error&lt;/high&gt;, e.g., &lt;i&gt;gradient descent&lt;/i&gt;: 
+&lt;ul&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;b&gt;Numerically&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;In most cases, parameters need to be found using a &lt;high&gt;directed trial and error&lt;/high&gt;, e.g., &lt;i&gt;gradient descent&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 `$$\boldsymbol \beta_{n+1} = \boldsymbol \beta_{n}+\gamma \nabla F(\boldsymbol \beta_{n})$$`
 
+&lt;/p&gt;
 
 ]
 
@@ -297,21 +333,24 @@ In most cases, parameters need to be found using a &lt;high&gt;directed trial an
 
 # 2 types of supervised problems
 
-.pull-left5[
+.pull-left45[
 
-There are two types of supervised learning problems that can often be approached using the same model.
-
-&lt;font style="font-size:24px"&gt;&lt;b&gt;Regression&lt;/b&gt;&lt;/font&gt;
-
-Regression problems involve the &lt;high&gt;prediction of a quantitative feature&lt;/high&gt;. 
-
-E.g., predicting the cholesterol level as a function of age. 
-
-&lt;font style="font-size:24px"&gt;&lt;b&gt;Classification&lt;/b&gt;&lt;/font&gt;
-
-Classification problems involve the &lt;high&gt;prediction of a categorical feature&lt;/high&gt;.   
-
-E.g., predicting the type of chest pain as a function of age. 
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Regression&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Regression problems involve the &lt;high&gt;prediction of a quantitative feature&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;E.g., predicting the cholesterol level as a function of age&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;b&gt;Classification&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Classification problems involve the &lt;high&gt;prediction of a categorical feature&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;E.g., predicting the type of chest pain as a function of age&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 
 ]
@@ -330,7 +369,9 @@ E.g., predicting the type of chest pain as a function of age.
 
 .pull-left45[
 
-In [logistic regression](https://en.wikipedia.org/wiki/Logistic_regression), the class criterion `\(Y \in (0,1)\)` is modeled also as the &lt;high&gt;sum of feature times weights&lt;/high&gt;, but with the prediction being transformed using a &lt;high&gt;logistic link function&lt;/high&gt;:
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;In &lt;a href="https://en.wikipedia.org/wiki/Logistic_regression"&gt;logistic regression&lt;/a&gt;, the class criterion &lt;font style="font-size:22px"&gt;&lt;mono&gt;Y &amp;isin; (0,1)&lt;/mono&gt;&lt;/font&gt; is modeled also as the &lt;high&gt;sum of feature times weights&lt;/high&gt;, but with the prediction being transformed using a &lt;high&gt;logistic link function&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p style="padding-top:10px"&gt;&lt;/p&gt;
 
@@ -338,7 +379,9 @@ In [logistic regression](https://en.wikipedia.org/wiki/Logistic_regression), the
 
 &lt;p style="padding-top:10px"&gt;&lt;/p&gt;
 
-The logistic function &lt;high&gt;maps predictions to the range of 0 and 1&lt;/high&gt;, the two class values.
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The logistic function &lt;high&gt;maps predictions to the range of 0 and 1&lt;/high&gt;, the two class values..&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p style="padding-top:10px"&gt;&lt;/p&gt;
 
@@ -358,7 +401,9 @@ $$ Logistic(x) = \frac{1}{1+exp(-x)}$$
 
 .pull-left45[
 
-In [logistic regression](https://en.wikipedia.org/wiki/Logistic_regression), the class criterion `\(Y \in (0,1)\)` is modeled also as the &lt;high&gt;sum of feature times weights&lt;/high&gt;, but with the prediction being transformed using a &lt;high&gt;logistic link function&lt;/high&gt;:
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;In &lt;a href="https://en.wikipedia.org/wiki/Logistic_regression"&gt;logistic regression&lt;/a&gt;, the class criterion &lt;font style="font-size:22px"&gt;&lt;mono&gt;Y &amp;isin; (0,1)&lt;/mono&gt;&lt;/font&gt; is modeled also as the &lt;high&gt;sum of feature times weights&lt;/high&gt;, but with the prediction being transformed using a &lt;high&gt;logistic link function&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p style="padding-top:10px"&gt;&lt;/p&gt;
 
@@ -366,7 +411,9 @@ In [logistic regression](https://en.wikipedia.org/wiki/Logistic_regression), the
 
 &lt;p style="padding-top:10px"&gt;&lt;/p&gt;
 
-The logistic function &lt;high&gt;maps predictions to the range of 0 and 1&lt;/high&gt;, the two class values.
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The logistic function &lt;high&gt;maps predictions to the range of 0 and 1&lt;/high&gt;, the two class values..&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p style="padding-top:10px"&gt;&lt;/p&gt;
 
@@ -382,20 +429,31 @@ $$ Logistic(x) = \frac{1}{1+exp(-x)}$$
 
 ---
 
-# Classification loss - two ways
+# Classification loss
 
 .pull-left45[
 
-&lt;font style="font-size:24px"&gt;&lt;b&gt;Distance&lt;/b&gt;&lt;/font&gt;
-
-Logloss is &lt;high&gt;used to fit the parameters&lt;/high&gt;, alternative distance measures are MSE and MAE.
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Distance&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Logloss is &lt;high&gt;used to fit the parameters&lt;/high&gt;, alternative distance measures are MSE and MAE.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 `$$\small LogLoss = -\frac{1}{n}\sum_{i}^{n}(log(\hat{y})y+log(1-\hat{y})(1-y))$$`
 `$$\small MSE = \frac{1}{n}\sum_{i}^{n}(y-\hat{y})^2, \: MAE = \frac{1}{n}\sum_{i}^{n} \lvert y-\hat{y} \rvert$$`
 
-&lt;font style="font-size:24px"&gt;&lt;b&gt;Overlap&lt;/b&gt;&lt;/font&gt;
 
-Does the &lt;high&gt;predicted class match the actual class&lt;/high&gt;. Often preferred for &lt;high&gt;ease of interpretation&lt;/high&gt;. 
+&lt;ul&gt; 
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;b&gt;Overlap&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Does the &lt;high&gt;predicted class match the actual class&lt;/high&gt;. Often preferred for &lt;high&gt;ease of interpretation&lt;/high&gt;..&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 `$$\small Loss_{01}=\frac{1}{n}\sum_i^n I(y \neq \lfloor \hat{y} \rceil)$$`
 
@@ -413,15 +471,23 @@ Does the &lt;high&gt;predicted class match the actual class&lt;/high&gt;. Often 
 
 .pull-left45[
 
-The confusion matrix &lt;high&gt;tabulates prediction matches and mismatches&lt;/high&gt; as a function of the true class.
 
-The confusion matrix permits specification of a number of &lt;high&gt;helpful performance metrics&lt;/high&gt;.  
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The confusion matrix &lt;high&gt;tabulates prediction matches and mismatches&lt;/high&gt; as a function of the true class.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The confusion matrix permits specification of a number of &lt;high&gt;helpful performance metrics&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;br&gt;
 
-&lt;u&gt; Confusion matrix &lt;/u&gt;
+&lt;b&gt; Confusion matrix &lt;/b&gt;
+
+&lt;font style="font-size:22px"&gt;
+&lt;br&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
+&lt;col width=20%&gt;
+&lt;col width=40%&gt;
+&lt;col width=40%&gt;
 &lt;tr&gt;
   &lt;td&gt;
   &lt;/td&gt;
@@ -456,7 +522,7 @@ The confusion matrix permits specification of a number of &lt;high&gt;helpful pe
 &lt;/tr&gt;
 &lt;/table&gt;
 
-
+&lt;/font&gt;
 ]
 
 .pull-right45[
@@ -487,15 +553,22 @@ The confusion matrix permits specification of a number of &lt;high&gt;helpful pe
 
 .pull-left45[
 
-The confusion matrix &lt;high&gt;tabulates prediction matches and mismatches&lt;/high&gt; as a function of the true class.
-
-The confusion matrix permits specification of a number of &lt;high&gt;helpful performance metrics&lt;/high&gt;.  
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The confusion matrix &lt;high&gt;tabulates prediction matches and mismatches&lt;/high&gt; as a function of the true class.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The confusion matrix permits specification of a number of &lt;high&gt;helpful performance metrics&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;br&gt;
 
-&lt;u&gt; Confusion matrix &lt;/u&gt;
+&lt;b&gt; Confusion matrix &lt;/b&gt;
+
+&lt;font style="font-size:22px"&gt;
+&lt;br&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
+&lt;col width=20%&gt;
+&lt;col width=40%&gt;
+&lt;col width=40%&gt;
 &lt;tr&gt;
   &lt;td&gt;
   &lt;/td&gt;
@@ -530,6 +603,7 @@ The confusion matrix permits specification of a number of &lt;high&gt;helpful pe
 &lt;/tr&gt;
 &lt;/table&gt;
 
+&lt;/font&gt;
 
 ]
 
@@ -560,7 +634,7 @@ class: center,  middle
 
 &lt;br&gt;&lt;br&gt;
 
-# Let's fit regression models with `caret`!
+# Fitting regression models with `caret`
 
 &lt;img src="https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/09/Caret-package-in-R.png" width="70%" style="display: block; margin: auto;" /&gt;
 
@@ -570,11 +644,9 @@ class: center,  middle
 
 ---
 
-# `caret`
+# `caret`s fitting functions
 
 .pull-left45[
-
-&lt;u&gt;&lt;mono&gt;caret&lt;/mono&gt;'s key fitting functions&lt;/u&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
 &lt;tr&gt;
@@ -590,7 +662,7 @@ class: center,  middle
     &lt;mono&gt;trainControl()&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-    Choose settings for how fitting should be carried out.
+    Choose &lt;high&gt;settings&lt;/high&gt; for how fitting should be carried out.
   &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -598,7 +670,7 @@ class: center,  middle
     &lt;mono&gt;train()&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td&gt;
-    Specify the model and find *best* parameters.
+    Specify the model and &lt;high&gt;find 'best' parameters&lt;/high&gt;.
   &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -606,7 +678,7 @@ class: center,  middle
     &lt;mono&gt;postResample()&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-    Evaluate model performance (fitting or prediction) for regression.
+    &lt;high&gt;Evaluate&lt;/high&gt; model performance (fitting or prediction) for regression.
   &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -614,7 +686,7 @@ class: center,  middle
     &lt;mono&gt;confusionMatrix()&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-    Evaluate model performance (fitting or prediction) for classification.
+    &lt;high&gt;Evaluate&lt;/high&gt; model performance (fitting or prediction) for classification.
   &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
@@ -659,26 +731,26 @@ confusionMatrix(fit, truth)
 
 .pull-left45[
 
-`trainControl()` controls how `caret` fits an ML model.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;trainControl()&lt;/mono&gt; controls &lt;high&gt;how &lt;mono&gt;caret&lt;/mono&gt; fits an ML model&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;For now, we set &lt;mono&gt;method = "none"&lt;/mono&gt; to keep things simple. More in the session on &lt;b&gt;optimization&lt;/b&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-For now, set `method = "none"` to keep things simple. More in the session on &lt;b&gt;optimization&lt;/b&gt;.
+&lt;br&gt;
 
 
 ```r
 # Fit the model without any 
-#  advanced parameter tuning methods
-
+# advanced parameter tuning methods
 ctrl &lt;- trainControl(method = "none")
+
+# show help file
+?trainControl
 ```
 
 ]
 
 .pull-right45[
-
-
-```r
-?trainControl
-```
 
 &lt;img src="image/traincontrol_help.jpg" width="100%" style="display: block; margin: auto;" /&gt;
 
@@ -690,9 +762,11 @@ ctrl &lt;- trainControl(method = "none")
 
 .pull-left4[
 
-`train()` is the fitting &lt;high&gt;workhorse&lt;/high&gt; of `caret`, offering you &lt;high&gt;200+ models&lt;/high&gt; just by changing the &lt;high&gt;method&lt;/high&gt; argument!
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;train()&lt;/mono&gt; is the &lt;high&gt;fitting workhorse&lt;/high&gt; of &lt;mono&gt;caret&lt;/mono&gt;, offering you &lt;high&gt;200+ models&lt;/high&gt; by merely changing the &lt;high&gt;method&lt;/high&gt; argument!.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;u&gt;&lt;mono&gt;train()&lt;/mono&gt;'s key arguments&lt;/u&gt;
+&lt;br&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
 &lt;tr&gt;
@@ -781,9 +855,11 @@ Resampling: None
 
 .pull-left4[
 
-`train()` is the fitting &lt;high&gt;workhorse&lt;/high&gt; of `caret`, offering you &lt;high&gt;200+ models&lt;/high&gt; just by changing the &lt;high&gt;method&lt;/high&gt; argument!
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;train()&lt;/mono&gt; is the &lt;high&gt;fitting workhorse&lt;/high&gt; of &lt;mono&gt;caret&lt;/mono&gt;, offering you &lt;high&gt;200+ models&lt;/high&gt; by merely changing the &lt;high&gt;method&lt;/high&gt; argument!.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;u&gt;&lt;mono&gt;train()&lt;/mono&gt;'s key arguments&lt;/u&gt;
+&lt;br&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
 &lt;tr&gt;
@@ -872,11 +948,10 @@ Resampling: None
 
 # `train()`
 
-&lt;p style="padding-top:1px"&gt;&lt;/p&gt;
-
-`train()` is the fitting &lt;high&gt;workhorse&lt;/high&gt; of `caret`, offering you &lt;high&gt;200+ models&lt;/high&gt; just by changing the &lt;high&gt;method&lt;/high&gt; argument!
-
-Find all 200+ models [here](http://topepo.github.io/caret/available-models.html).
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;mono&gt;train()&lt;/mono&gt; is the &lt;high&gt;fitting workhorse&lt;/high&gt; of &lt;mono&gt;caret&lt;/mono&gt;, offering you &lt;high&gt;200+ models&lt;/high&gt; by merely changing the &lt;high&gt;method&lt;/high&gt; argument!.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Find all 200+ models &lt;a href="http://topepo.github.io/caret/available-models.html"&gt;here&lt;/a&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -896,10 +971,17 @@ Find all 200+ models [here](http://topepo.github.io/caret/available-models.html)
 
 .pull-left4[
 
-The criterion must be the right type: 
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The criterion must be the right type:
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;numeric&lt;/mono&gt;&lt;/high&gt; criterion &amp;rarr; &lt;high&gt;Regression&lt;/high&gt;&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;factor&lt;/mono&gt;&lt;/high&gt; criterion &amp;rarr; &lt;high&gt;Classification&lt;/high&gt;&lt;br&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;b&gt;&lt;mono&gt;numeric&lt;/mono&gt; criterion = Regression&lt;/b&gt;&lt;br&gt;
-&lt;b&gt;&lt;mono&gt;factor&lt;/mono&gt; criterion = Classification&lt;/b&gt;!
+&lt;br&gt;
 
 
 ```
@@ -939,13 +1021,16 @@ load_mod &lt;- train(form = factor(Default) ~ .,
 
 ---
 
-# &lt;mono&gt;.$finalModel&lt;/mono&gt;
+# &lt;mono&gt;mod$finalModel&lt;/mono&gt;
 
 .pull-left4[
 
-The `train()` function returns a `list` with a key object called `finalModel` - this is your &lt;high&gt;final machine learning model&lt;/high&gt;!
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The &lt;mono&gt;train()&lt;/mono&gt; function returns a &lt;mono&gt;list&lt;/mono&gt; with an object called &lt;mono&gt;finalModel&lt;/mono&gt; - this is your &lt;high&gt;fitted machine learning model&lt;/high&gt;!&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Access&lt;/high&gt; the model with &lt;mono&gt;mod$finalModel&lt;mono&gt; and &lt;high&gt;explore&lt;/high&gt; the object with generic functions.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-Access the model with `mod$finalModel` and &lt;high&gt;explore&lt;/high&gt; the object with generic functions:
+&lt;br&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
 &lt;tr&gt;
@@ -961,7 +1046,7 @@ Access the model with `mod$finalModel` and &lt;high&gt;explore&lt;/high&gt; the 
     &lt;mono&gt;summary()&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-    Overview of the most important results.
+    &lt;high&gt;Overview&lt;/high&gt; of the most important results.
   &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -969,7 +1054,7 @@ Access the model with `mod$finalModel` and &lt;high&gt;explore&lt;/high&gt; the 
     &lt;mono&gt;names()&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;
-    See all named elements you can access with $.
+    See all &lt;high&gt;named elements&lt;/high&gt; you can access with $.
   &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
@@ -1018,10 +1103,13 @@ income_mod$finalModel$coefficients
 
 # `predict()`
 
-.pull-left5[
+.pull-left45[
 
-The `predict()` function &lt;high&gt;produces predictions&lt;/high&gt; from a model. Simply put model object as the first argument. 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The &lt;mono&gt;predict()&lt;/mono&gt; function &lt;high&gt;produces predictions&lt;/high&gt; from a model. Simply put model object as the first argument.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;br&gt;
 
 
 ```r
@@ -1040,7 +1128,7 @@ glm_fits[1:8]
 .pull-right45[
 
 
-&lt;img src="Fitting_files/figure-html/unnamed-chunk-26-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Fitting_files/figure-html/unnamed-chunk-25-1.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1050,7 +1138,11 @@ glm_fits[1:8]
 
 .pull-left45[
 
-The `postResample()` function &lt;high&gt;gives a simple summary&lt;/high&gt; of a models' performance in a &lt;high&gt;regression task&lt;/high&gt;. Simply put the predicted values and the true values inside the function. 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The &lt;nono&gt;postResample()&lt;/nono&gt; function &lt;high&gt;gives a simple summary&lt;/high&gt; of a models' performance in a &lt;high&gt;regression task&lt;/high&gt;. Simply put the predicted values and the true values inside the function.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
 
 
 ```r
@@ -1068,7 +1160,7 @@ postResample(glm_fits,
 
 .pull-right45[
 
-&lt;img src="Fitting_files/figure-html/unnamed-chunk-28-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="Fitting_files/figure-html/unnamed-chunk-27-1.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1082,7 +1174,11 @@ postResample(glm_fits,
 
 &lt;p style="padding-top:10px"&gt;&lt;/p&gt;
 
-The `confusionMatrix()` does the same for a models' performance in a &lt;high&gt;classification task&lt;/high&gt;. Simply put the predicted values and the true values inside the function.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;The &lt;nono&gt;confusionMatrix()&lt;/nono&gt; does the same for a models' performance in a &lt;high&gt;classification task&lt;/high&gt;. Simply put the predicted values and the true values inside the function..&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
 
 
 ```r

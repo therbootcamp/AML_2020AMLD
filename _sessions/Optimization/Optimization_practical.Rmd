@@ -3,7 +3,7 @@ title: "Optimization"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
-      <font style='font-style:normal'>Machine Learning with R</font><br>
+      <font style='font-style:normal'>Applied Machine Learning with R</font><br>
       <a href='https://therbootcamp.github.io/ML_2019Oct/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
@@ -17,7 +17,7 @@ author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0
         <i class='fab fa-linkedin' style='font-size: .9em;'></i>
       </a>
       <a href='https://therbootcamp.github.io'>
-        <font style='font-style:normal'>Basel R Bootcamp</font>
+        <font style='font-style:normal'>The R Bootcamp @ AMLD</font>
       </a>
     </td>
     <td style='width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none'>
@@ -35,8 +35,8 @@ knitr::opts_chunk$set(comment = NA,
                       fig.width = 6, 
                       fig.height = 6,
                       fig.align = 'center',
-                      echo = TRUE, 
-                      eval = TRUE, 
+                      echo = FALSE, 
+                      eval = FALSE, 
                       warning = FALSE,
                       message = FALSE)
 
@@ -48,13 +48,13 @@ set.seed(100)
 ```{r, message = FALSE, eval = TRUE, echo = FALSE}
 # Load datasets locally
 library(tidyverse)
-college_train <- read_csv("../../1_Data/college_train.csv")
-college_test <- read_csv("../../1_Data/college_test.csv")
-house_train <- read_csv("../../1_Data/house_train.csv")
-house_test <- read_csv("../../1_Data/house_test.csv")
-hitters_train <- read_csv("../../1_Data/hitters_train.csv") %>%
+college_train <- read_csv("_Data/college_train.csv")
+college_test <- read_csv("1_Data/college_test.csv")
+house_train <- read_csv("1_Data/house_train.csv")
+house_test <- read_csv("1_Data/house_test.csv")
+hitters_train <- read_csv("1_Data/hitters_train.csv") %>%
   select(Salary, everything())
-hitters_test <- read_csv("../../1_Data/hitters_test.csv") %>%
+hitters_test <- read_csv("1_Data/hitters_test.csv") %>%
   select(Salary, everything())
 ```
 <p align="center">
@@ -74,15 +74,13 @@ By the end of this practical you will know how to:
 
 ## Tasks
 
-### Baseball player salaries
-
 In this practical, we will predict the `Salary` of baseball players from the `hitters_train` and `hitters_test` datasets. 
 
 ### A - Setup
 
-1. Open your `BaselRBootcamp` R project. It should already have the folders `1_Data` and `2_Code`. Make sure that the data file(s) listed in the `Datasets` section are in your `1_Data` folder
+1. Open your `RBootcamp_AMLD2020` R project. It should already have the folders `1_Data` and `2_Code`. Make sure that the data file(s) listed in the `Datasets` section are in your `1_Data` folder
 
-2. Open a new R script. At the top of the script, using comments, write your name and the date. Save it as a new file called `Optimization_practical.R` in the `2_Code` folder.  
+2. Open a new R script and save it as a new file called `Optimization_practical.R` in the `2_Code` folder.  
 
 3. Using `library()` load the set of packages for this practical listed in the packages section above.
 
@@ -117,33 +115,8 @@ hitters_train
 hitters_test
 ```
 
-6. Print the numbers of rows and columns of each dataset using the `dim()` function.
 
-```{r, echo = TRUE, eval = FALSE}
-# Print numbers of rows and columns
-dim(XXX)
-dim(XXX)
-```
-
-```{r}
-dim(hitters_train)
-dim(hitters_test)
-```
-
-7. Look at the names of the dataframes with the `names()` function.
-
-```{r, echo = TRUE, eval = FALSE}
-# Print the names of each dataframe
-names(XXX)
-names(XXX)
-```
-
-```{r}
-names(hitters_train)
-names(hitters_test)
-```
-
-8. Open each dataset in a new window using `View()`. Do they look ok?
+6. Open each dataset in a new window using `View()`. Do they look ok?
 
 ```{r, eval = FALSE, echo = TRUE}
 # Open each dataset in a window.
@@ -151,7 +124,7 @@ View(XXX)
 View(XXX)
 ```
 
-9. As always, we need to convert all character columns to factors before we start. Do this by running the following code.
+7. As always, we need to convert all character columns to factors before we start. Do this by running the following code.
 
 ```{r}
 # Convert all character columns to factor
@@ -162,7 +135,7 @@ hitters_test <- hitters_test %>%
           mutate_if(is.character, factor)
 ```
 
-### B - Setup `trainControl`
+### B - Setup `trainControl()`
 
 1. Set up your training by specifying `ctrl_cv` as 10-fold cross-validation. Specifically,...
 
@@ -212,26 +185,14 @@ salary_glm <- train(form = Salary ~ .,
 salary_glm
 ```
 
-3. Try plotting your `salary_glm` object. What happens? What does this error mean?
-
-```{r}
-# I get the following error:
-
-# Error in plot.train(salary_glm) : 
-#   There are no tuning parameters for this model.
-
-
-# The problem is that method = "glm" has no tuning parameters so there is nothing to plot!
-```
-
-4. Print your final model object with `salary_glm$finalModel`.
+3. Print your final model object with `salary_glm$finalModel`.
 
 ```{r, echo = TRUE}
 # Print final regression model
 salary_glm$finalModel
 ```
 
-5. Print your final regression model coefficients with `coef()`.
+4. Print your final regression model coefficients with `coef()`.
 
 ```{r}
 # Print glm coefficients
@@ -472,7 +433,6 @@ salary_rpart$bestTune$cp
 plot(as.party(salary_rpart$finalModel)) 
 ```
 
-
 7. How do the nodes in the tree compare to the coefficients you found in your regression analyses? Do you see similarities or differences?
 
 ```{r}
@@ -678,31 +638,6 @@ postResample(pred = rf_pred,
 # Depends on what you mean by 'close', but they are definitely higher (worse) in the test data
 ```
 
-
-### Z - Challenges
-
-1. In addition to 'regular' 10 fold cross-validation, you can also do repeated 10-fold cross-validation, where the cross validation procedure is repeated many times. Do you think this will improve your models' performance? To test this, create a new training control object called `ctrl_cv_rep` as below. Then, train your models again using `ctrl_cv_rep` (instead of `ctrl_cv`), and evaluate their prediction performance. Do they improve? Do you get different optimal tuning values compared to your previous models?
-
-```{r}
-# Repeated cross validation.
-#  Folds = 10
-#  Repeats = 5
-ctrl_cv_rep <- trainControl(method = "repeatedcv",
-                            number = 10,
-                            repeats = 5)
-```
-
-2. Using the same procedure as above, compare models predicting the prices of houses in King County Washington using the `house_train` and `house_test` datasets. 
-
-3. When using lasso regression, do you find that the lasso sets any beta weights to exactly 0? If so, which ones?
-
-4. Which model does the best and how accurate was it? Was it the same model that performed the best predicting baseball player salaries?
-
-5. Using the same procedure as above, compare models predicting the graduate rate of students from different colleges using the `college_train` and `college_test` datasets. 
-
-6. When using lasso regression, do you find that the lasso sets any beta weights to exactly 0? If so, which ones?
-
-7. Which model does the best and how accurate was it? Was it the same model that performed the best predicting baseball player salaries?
 
 ## Examples
 

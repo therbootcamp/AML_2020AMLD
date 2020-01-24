@@ -1,11 +1,11 @@
 ---
-title: "Optimization"
-author: "Machine Learning with R<br>
+title: "Tuning"
+author: "Applied Machine Learning with R<br>
   <a href='https://therbootcamp.github.io'>
-    Basel R Bootcamp
+    The R Bootcamp @ AMLD
   </a>
   <br>
-  <a href='https://therbootcamp.github.io/ML_2019Oct/'>
+  <a href='https://therbootcamp.github.io/AML_2020AMLD/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -17,7 +17,7 @@ author: "Machine Learning with R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "October 2019"
+date: "January 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Machine Learning with R | October 2019
+      Applied Machine Learning with R @ AMLD  | January 2020
       </font>
     </a>
     </span>
@@ -55,7 +55,7 @@ layout: true
 
 ```{r, eval = TRUE, echo = FALSE, warning=F,message=F}
 # Code to knit slides
-baselers <- readr::read_csv("../../1_Data/baselers.csv")
+baselers <- readr::read_csv("1_Data/baselers.csv")
 
 
 source("https://raw.githubusercontent.com/therbootcamp/ML_2019Oct/master/_materials/code/baselrbootcamp_palettes.R")
@@ -83,7 +83,7 @@ library(tidyverse)
 library(ggthemes)
 library(caret)
 
-baselers <- read_csv("../../1_Data/baselers.csv")
+baselers <- read_csv("1_Data/baselers.csv")
 
 print2 <- function(x, nlines=10,...)
    cat(head(capture.output(print(x,...)), nlines), sep="\n")
@@ -169,11 +169,12 @@ fit_gg <- ggplot(agg, aes(x = phase, y = Error, fill = Degree)) +
 <br><br><br>
 # Fighting overfitting
 
-When a model <high>fits the training data too well</high> on the expense of its performance in prediction, this is called overfitting.  
+<ul>
+  <li class="m1"><span>When a model <high>fits the training data too well</high> on the expense of its performance in prediction, this is called overfitting.</span></li>
+  <li class="m2"><span>Just because model A is better than model B in training, does not mean it will be better in testing! Extremely flexible models are <high>'wolves in sheep's clothing'</high>.</span></li>
+  <li class="m2"><span>But is there nothing we can do?.</span></li>
+</ul>
 
-Just because model A is better than model B in training, does not mean it will be better in testing! Extremely flexible models are <high>'wolves in sheep's clothing'</high>.
-
-But is there nothing we can do?
 
 ]
 
@@ -195,21 +196,19 @@ But is there nothing we can do?
 
 .pull-left45[
 
-All machine learning models are equipped with tuning parameters that <high> control model complexity<high>. 
-
-These tuning parameters can be identified using a <high>validation set</high> created from the traning data.
-
-<u>Logic</u>
-
-1 - Create separate test set. 
-
-2 - Fit model using various tuning parameters.
-
-3 - Select tuning leading to best prediction on
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validation set.
-
-4 - Refit model to entire training set (training + 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validation).
+<ul>
+  <li class="m1"><span>Machine learning models are equipped with tuning parameters that <high> control model complexity<high>.</span></li><br>
+  <li class="m2"><span>These tuning parameters can be identified using a <high>validation set</high> created from the traning data.</span></li><br>
+  <li class="m3"><span>Algorithm:
+  <br><br>
+  <ul class="level">
+    <li><span>1 - Create separate test set.</span></li>
+    <li><span>2 - Fit model using various tuning parameters.</span></li>
+    <li><span>3 - Select tuning leading to best prediction on validation set.</span></li>
+    <li><span>4 - Refit model to entire training set (training + validation).</span></li>
+  </ul>
+  </span></li>
+</ul>
 
 
 ]
@@ -228,7 +227,9 @@ These tuning parameters can be identified using a <high>validation set</high> cr
 
 .pull-left4[
 
-Resampling methods automatize and generalize model tuning. 
+<ul>
+  <li class="m1"><span>Resampling methods automatize and generalize model tuning.</span></li>
+</ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
   <col width="30%">
@@ -274,7 +275,9 @@ Resampling methods automatize and generalize model tuning.
 
 .pull-left4[
 
-Resampling methods automatize and generalize model tuning. 
+<ul>
+  <li class="m1"><span>Resampling methods automatize and generalize model tuning.</span></li>
+</ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
   <col width="30%">
@@ -320,7 +323,9 @@ Resampling methods automatize and generalize model tuning.
 
 .pull-left4[
 
-Resampling methods automatize and generalize model tuning. 
+<ul>
+  <li class="m1"><span>Resampling methods automatize and generalize model tuning.</span></li>
+</ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
   <col width="30%">
@@ -377,7 +382,11 @@ class: center, middle
 
 .pull-left45[
 
-Penalizes regression loss for having large $\beta$ values using the <high>lambda &lambda; tuning parameter</high> and one of several penalty functions.
+<ul>
+  <li class="m1"><span>Penalizes regression loss for having large <font style="font-size:22px">&beta</font>; values using the <high>lambda &lambda; tuning parameter</high> and one of several penalty functions.</span></li>
+</ul>
+
+
 
 $$Regularized \;loss = \sum_i^n (y_i-\hat{y}_i)^2+\lambda \sum_j^p f(\beta_j)) $$
 <table style="cellspacing:0; cellpadding:0; border:none;">
@@ -449,19 +458,21 @@ $$Regularized \;loss = \sum_i^n (y_i-\hat{y}_i)^2+\lambda \sum_j^p f(\beta_j)) $
 
 <p style="padding-top:1px"></p>
 
-Despite <high>superficial similarities</high>, Lasso and Ridge show very different behavior.
+<ul>
+  <li class="m1"><span><b>Ridge</b>
+  <br><br>
+  <ul class="level">
+    <li><span>By penalizing the most extreme &beta;s most strongly, Ridge leads to (relatively) more <high>uniform &beta;s</high>.</span></li>
+  </ul>
+  </span></li><br><br><br><br>
+  <li class="m2"><span><b>Lasso</b>
+  <br><br>
+  <ul class="level">
+    <li><span>By penalizing all &beta;s equally, irrespective of magnitude, Lasso drives some &beta;s to 0 resulting effectively in <high>automatic feature selection</high>.</span></li>
+  </ul>
+  </span></li>
+</ul>
 
-<p style="padding-top:10px"></p>
-
-<b>Ridge</b>
-
-By penalizing the most extreme &beta;s most strongly, Ridge leads to (relatively) more <high>uniform &beta;s</high>.
-
-<p style="padding-top:10px"></p>
-
-<b>Lasso</b>
-
-By penalizing all &beta;s equally, irrespective of magnitude, Lasso drives some &beta;s to 0 resulting effectively in <high>automatic feature selection</high>.
 
 ]
 
@@ -492,11 +503,12 @@ By penalizing all &beta;s equally, irrespective of magnitude, Lasso drives some 
 .pull-left4[
 
 
-To fit Lasso or Ridge penalized regression in R, use `method = "glmnet"`.
+<ul>
+  <li class="m1"><span>To fit Lasso or Ridge penalized regression in R, use <mono>method = "glmnet"</mono>.</span></li>
+  <li class="m2"><span>Specify the <high>type of penalty</high> and the <high>penalty weight</high> using the <mono>tuneGrid</mono> argument.</span></li>
+</ul>
 
-Specify the <high>type of penalty</high> and the <high>penalty weight</high> using the <mono>tuneGrid</mono> argument. 
-
-<u><mono>tuneGrid settings</mono></u>
+<br>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
 <tr>
@@ -577,7 +589,11 @@ class: center, middle
 
 .pull-left4[
 
-Decision trees have a <high>complexity parameter</high> called `cp`.
+<ul>
+  <li class="m1"><span>Decision trees have a <high>complexity parameter</high> called <high>cp</high>.</span></li>
+</ul>
+
+
 
 <p style="padding-top:3px"></p>
 
@@ -589,8 +605,6 @@ Loss = & Impurity\,+\\
 \end{split}
 $$
 <p style="padding-top:3px"></p>
-
-<u><mono>tuneGrid settings</mono></u>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
 <tr>
@@ -638,7 +652,11 @@ $$
 
 .pull-left4[
 
-Decision trees have a <high>complexity parameter</high> called `cp`.
+<ul>
+  <li class="m1"><span>Decision trees have a <high>complexity parameter</high> called <high>cp</high>.</span></li>
+</ul>
+
+
 
 <p style="padding-top:3px"></p>
 
@@ -650,8 +668,6 @@ Loss = & Impurity\,+\\
 \end{split}
 $$
 <p style="padding-top:3px"></p>
-
-<u><mono>tuneGrid settings</mono></u>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
 <tr>
@@ -721,11 +737,10 @@ class: center, middle
 
 .pull-left4[
 
-Random Forests have a <high>diversity parameter</high> called <mono>mtry</mono>.
-
-Technically, this controls how many features are randomly considered at each split of the trees.
-
-<u><mono>tuneGrid settings</mono></u>
+<ul>
+  <li class="m1"><span>Random Forests have a <high>diversity parameter</high> called <mono>mtry</mono>.</span></li>
+  <li class="m2"><span>Technically, this controls how many features are randomly considered at each split of the trees..</span></li>
+</ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
 <tr>
@@ -770,11 +785,10 @@ Technically, this controls how many features are randomly considered at each spl
 
 .pull-left4[
 
-Random Forests have a <high>diversity parameter</high> called <mono>mtry</mono>.
-
-Technically, this controls how many features are randomly considered at each split of the trees.
-
-<u><mono>tuneGrid settings</mono></u>
+<ul>
+  <li class="m1"><span>Random Forests have a <high>diversity parameter</high> called <mono>mtry</mono>.</span></li>
+  <li class="m2"><span>Technically, this controls how many features are randomly considered at each split of the trees.</span></li>
+</ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
 <tr>
@@ -836,9 +850,7 @@ class: center,  middle
 
 <br><br>
 
-# caret
-
-### Parameter tuning with k-fold cross-validation
+# Parameter tuning with k-fold cross-validation with `caret`
 
 ```{r, echo = FALSE, out.width = "60%"}
 knitr::include_graphics("https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/09/Caret-package-in-R.png")
@@ -853,13 +865,20 @@ knitr::include_graphics("https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl
 
 <p style="padding-top:1px"></p>
 
-<b>Goal</b>
-
-Use 10-fold cross-validation to identify <high>optimal regularization parameters</high> for a regression model. 
-
-<b>Consider</b>
-
-$\alpha \in 0, .5, 1$ and $\lambda \in 1, 2, ..., 100$
+<ul>
+  <li class="m1"><span><b>Goal</b>
+  <br><br>
+  <ul class="level">
+    <li><span>Use 10-fold cross-validation to identify <high>optimal regularization parameters</high> for a regression model.</span></li>
+  </ul>
+  </span></li><br>
+  <li class="m2"><span><b>Using</b>
+  <br><br>
+  <ul class="level">
+    <li><span><font style="font-size:22px"><mono>&alpha;	&isin; 0, .5., 1</mono></font> and <font style="font-size:22px"><mono>&lambda;	&isin; 1, 2., ..., 100</mono></font>.</span></li>
+  </ul>
+  </span></li>
+</ul>
 
 ]
 
@@ -883,10 +902,11 @@ $\alpha \in 0, .5, 1$ and $\lambda \in 1, 2, ..., 100$
 
 .pull-left4[
 
-Specify the use of k-fold cross-validation using the `trainControl()` function.
+<ul>
+  <li class="m1"><span>Specify the use of k-fold cross-validation using the `trainControl()` function.</span></li>
+</ul>
 
-
-<u><mono>trainControl() arguments</mono></u>
+<br>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
 <tr>
@@ -940,11 +960,11 @@ glmnet_mod <- train(form = income ~ .,
 
 .pull-left4[
 
-Specify the tuning parameter values to consider using the <high><mono>tuneGrid</mono></high>.
-
-<mono>tuneGrid</mono> expects a <high>list or data frame</high> as input. 
-
-<high>Parameter combinations</high> can be easily created using <mono>expand.grid</mono>.
+<ul>
+  <li class="m1"><span>Specify the tuning parameter values to consider using the <high><mono>tuneGrid</mono></high>.</span></li>
+  <li class="m2"><span><mono>tuneGrid</mono> expects a <high>list or data frame</high> as input.</span></li>
+  <li class="m3"><span><high>Parameter combinations</high> can be easily created using <mono>expand.grid</mono>.</span></li>
+</ul>
 
 ]
 
@@ -1064,9 +1084,10 @@ print2(coef(glmnet_mod$finalModel,
 
 .pull-left35[
 
-Compare the prediction performance of several models with `resamples()`.
-
-The `summary()` of this object will print 'prediction' error statistics from cross-validation during training. This is your <high>estimate of future prediction performance</high>!
+<ul>
+  <li class="m1"><span>Compare the prediction performance of several models with <mono>resamples()</mono>.</span></li>
+  <li class="m2"><span>The <mono>summary()</mono> of this object will print 'prediction' error statistics from cross-validation during training. This is your <high>estimate of future prediction performance</high>!</span></li>
+</ul>
 
 ]
 
@@ -1099,9 +1120,10 @@ summary(resamples_mod)
 
 <p style="padding-top:1px"></p>
 
-Compare the prediction performance of several models with `resamples()`.
-
-The `summary()` of this object will print 'prediction' error statistics from cross-validation during training. This is your <high>estimate of future prediction performance</high>!
+<ul>
+  <li class="m1"><span>Compare the prediction performance of several models with <mono>resamples()</mono>.</span></li>
+  <li class="m2"><span>The <mono>summary()</mono> of this object will print 'prediction' error statistics from cross-validation during training. This is your <high>estimate of future prediction performance</high>!</span></li>
+</ul>
 
 ]
 
@@ -1129,4 +1151,4 @@ summary(resamples_mod)
 ---
 class: middle, center
 
-<h1><a href=https://therbootcamp.github.io/ML_2019Oct/_sessions/Optimization/Optimization_practical.html>Practical</a></h1>
+<h1><a href=https://therbootcamp.github.io/AML_2020AMLD/_sessions/Optimization/Optimization_practical.html>Practical</a></h1>

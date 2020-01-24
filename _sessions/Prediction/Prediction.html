@@ -3,7 +3,7 @@
   <head>
     <title>Prediction</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Machine Learning with R   Basel R Bootcamp" />
+    <meta name="author" content="Applied Machine Learning with R   The R Bootcamp @ AMLD" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
@@ -12,8 +12,8 @@
 class: center, middle, inverse, title-slide
 
 # Prediction
-### Machine Learning with R<br> <a href='https://therbootcamp.github.io'> Basel R Bootcamp </a> <br> <a href='https://therbootcamp.github.io/ML_2019Oct/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-### October 2019
+### Applied Machine Learning with R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp @ AMLD </a> <br> <a href='https://therbootcamp.github.io/AML_2020AMLD/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### January 2020
 
 ---
 
@@ -34,7 +34,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-      Machine Learning with R | October 2019
+      Applied Machine Learning with R @ AMLD  | January 2020
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -47,45 +47,15 @@ layout: true
 
 
 
-
-# Prediction is...
-
-.pull-left45[
-
-&lt;p&gt;
-&lt;font style="font-size:32px"&gt;&lt;i&gt;Prediction is very difficult, especially if it's about the future.&lt;/i&gt;&lt;/font&gt;
-&lt;br&gt;&lt;br&gt;
-Nils Bohr, Nobel Laureate in Physics
-&lt;br&gt;&lt;br&gt;
-&lt;font style="font-size:32px"&gt;&lt;i&gt;An economist is an expert who will know tomorrow why the things he predicted yesterday didn't happen today.&lt;/i&gt;&lt;/font&gt;
-&lt;br&gt;&lt;br&gt;
-
-Evan Esar, Humorist
-
-&lt;/p&gt;
-
-]
-
-.pull-right45[
-
-&lt;p align = "center"&gt;
-&lt;img src="image/bohr.jpg"&gt;&lt;br&gt;
-&lt;font style="font-size:10px"&gt;from &lt;a href="https://futurism.com/know-your-scientist-niels-bohr-the-father-of-the-atom"&gt;futurism.com&lt;/a&gt;&lt;/font&gt;
-&lt;/p&gt;
-
-]
-
----
-
-# Hold-out data
+# Predict hold-out data
 
 .pull-left45[
 
-Model performance must be evaluated as true prediction on an &lt;high&gt;unseen data set&lt;/high&gt;.
-
-The unseen data set can be &lt;high&gt;naturally&lt;/high&gt; occurring, e.g., using 2019 stock prizes to evaluate a model fit using 2018 stock prizes. 
-
-More commonly unseen data is created by &lt;high&gt;splitting the available data&lt;/high&gt; into a training set and a test set. 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Model performance must be evaluated as true prediction on an &lt;high&gt;unseen data set&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The unseen data set can be &lt;high&gt;naturally&lt;/high&gt; occurring, e.g., using 2019 stock prizes to evaluate a model fit using 2018 stock prizes.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;More commonly unseen data is created by &lt;high&gt;splitting the available data&lt;/high&gt; into a training set and a test set.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -100,34 +70,9 @@ More commonly unseen data is created by &lt;high&gt;splitting the available data
 
 ---
 
-# Training
-
-Training a model means to &lt;high&gt;fit the model&lt;/high&gt; to data by finding the parameter combination that &lt;high&gt;minizes some error function&lt;/high&gt;, e.g., mean squared error (MSE).
-
-
-&lt;p align = "center" style="padding-top:30px"&gt;
-&lt;img src="image/training_flow.png" height=350px&gt;
-&lt;/p&gt;
-
-
----
-
-# Test
-
-To test a model means to &lt;high&gt;evaluate the prediction error&lt;/high&gt; for a fitted model, i.e., for a &lt;high&gt;fixed parameter combination&lt;/high&gt;.
-
-
-&lt;p align = "center" style="padding-top:30px"&gt;
-&lt;img src="image/testing_flow.png" height=350px&gt;
-&lt;/p&gt;
-
-
----
-
 # Why do we separate training from testing?
 
-&lt;br&gt;
-&lt;p align = "center"&gt;&lt;font size = 6&gt;&lt;i&gt;"Can you come up with a model that will perfectly fit the training criterion but is worthless in predicting test data?"&lt;/i&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
 
 .pull-left45[
 
@@ -164,7 +109,6 @@ To test a model means to &lt;high&gt;evaluate the prediction error&lt;/high&gt; 
 ]
 
 
-
 ---
 
 .pull-left4[
@@ -172,11 +116,12 @@ To test a model means to &lt;high&gt;evaluate the prediction error&lt;/high&gt; 
 &lt;br&gt;&lt;br&gt;
 # Overfitting
 
-Occurs when a model &lt;high&gt;fits data too closely&lt;/high&gt; and therefore &lt;high&gt;fails to reliably predict&lt;/high&gt; future observations. 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Occurs when a model &lt;high&gt;fits data too closely&lt;/high&gt; and therefore &lt;high&gt;fails to reliably predict&lt;/high&gt; future observations.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;In other words, overfitting occurs when a model &lt;high&gt;'mistakes' random noise for a predictable signal&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;More &lt;high&gt;complex models&lt;/high&gt; are more &lt;high&gt;prone to overfitting&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-In other words, overfitting occurs when a model &lt;high&gt;'mistakes' random noise for a predictable signal&lt;/high&gt;.
-
-More &lt;high&gt;complex models&lt;/high&gt; are more &lt;high&gt;prone to overfitting&lt;/high&gt;. 
 
 ]
 
@@ -195,6 +140,32 @@ More &lt;high&gt;complex models&lt;/high&gt; are more &lt;high&gt;prone to overf
 # Overfitting
 
 &lt;img src="Prediction_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+# Training
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Training a model means to &lt;high&gt;fit the model&lt;/high&gt; to data by finding the parameter combination that &lt;high&gt;minizes some error function&lt;/high&gt;, e.g., mean squared error (MSE).&lt;/span&gt;&lt;/li&gt;&lt;br&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+&lt;p align = "center"&gt;
+&lt;img src="image/training_flow.png" height=350px&gt;
+&lt;/p&gt;
+
+---
+
+# Test
+
+&lt;ul style="margin-bottom:-20px"&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;To test a model means to &lt;high&gt;evaluate the prediction error&lt;/high&gt; for a fitted model, i.e., for a &lt;high&gt;fixed parameter combination&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+&lt;p align = "center"&gt;
+&lt;img src="image/testing_flow.png" height=350px&gt;
+&lt;/p&gt;
 
 
 ---
@@ -217,10 +188,10 @@ class: center, middle
 
 .pull-left45[
 
-CART is short for &lt;high&gt;Classification and Regression Trees&lt;/high&gt;, which are often just called &lt;high&gt;Decision trees&lt;/high&gt;.
-
-In [decision trees](https://en.wikipedia.org/wiki/Decision_tree), the criterion is modeled as a &lt;high&gt;sequence of logical TRUE or FALSE questions&lt;/high&gt;.
-&lt;br&gt;&lt;br&gt;
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;CART is short for &lt;high&gt;Classification and Regression Trees&lt;/high&gt;, which are often just called &lt;high&gt;Decision trees&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;In &lt;a href="https://en.wikipedia.org/wiki/Decision_tree"&gt;decision trees&lt;/a&gt;, the criterion is modeled as a &lt;high&gt;sequence of logical TRUE or FALSE questions&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;&lt;br&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -237,15 +208,17 @@ In [decision trees](https://en.wikipedia.org/wiki/Decision_tree), the criterion 
 
 .pull-left45[
 
-Classification trees (and regression trees) are created using a relatively simple &lt;high&gt;three-step algorithm&lt;/high&gt;. 
-
-&lt;u&gt;Algorithm&lt;/u&gt;
-
-1 - &lt;high&gt;Split&lt;/high&gt; nodes to maximize &lt;b&gt;purity gain&lt;/b&gt; (e.g., Gini gain).
-
-2 - &lt;high&gt;Repeat&lt;/high&gt; until pre-defined threshold (e.g., `minsplit`) splits are no longer possible.
-
-3 - &lt;high&gt;Prune&lt;/high&gt; tree to reasonable size.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Classification trees (and regression trees) are created using a relatively simple &lt;high&gt;three-step algorithm&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Algorithm:
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;1 - &lt;high&gt;Split&lt;/high&gt; nodes to maximize &lt;b&gt;purity gain&lt;/b&gt; (e.g., Gini gain).&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;2 - &lt;high&gt;Repeat&lt;/high&gt; until pre-defined threshold (e.g., `minsplit`) splits are no longer possible.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;3 - &lt;high&gt;Prune&lt;/high&gt; tree to reasonable size.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -262,17 +235,20 @@ Classification trees (and regression trees) are created using a relatively simpl
 
 .pull-left45[
 
-Classification trees attempt to &lt;high&gt;minize node impurity&lt;/high&gt; using, e.g., the &lt;high&gt;Gini coefficient&lt;/high&gt;.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Classification trees attempt to &lt;high&gt;minize node impurity&lt;/high&gt; using, e.g., the &lt;high&gt;Gini coefficient&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 
 `$$\large Gini(S) = 1 - \sum_j^kp_j^2$$`
 
-Nodes are &lt;high&gt;split&lt;/high&gt; using the variable and split value that &lt;high&gt;maximizes Gini gain&lt;/high&gt;. 
-
+&lt;ul&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Nodes are &lt;high&gt;split&lt;/high&gt; using the variable and split value that &lt;high&gt;maximizes Gini gain&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 `$$Gini \; gain = Gini(S) - Gini(A,S)$$`
 
-with
+&lt;p style="padding:0;margin:0" align="center"&gt;with&lt;/p&gt;
 
 `$$Gini(A, S) = \sum \frac{n_i}{n}Gini(S_i)$$`
 
@@ -294,9 +270,10 @@ with
 
 .pull-left45[
 
-Classification trees are &lt;high&gt;pruned&lt;/high&gt; back such that every split has a purity gain of at least &lt;high&gt;&lt;mono&gt;cp&lt;/mono&gt;&lt;/high&gt;, with `cp` typically set to `.01`.  
-
-Minimize:
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Classification trees are &lt;high&gt;pruned&lt;/high&gt; back such that every split has a purity gain of at least &lt;high&gt;&lt;mono&gt;cp&lt;/mono&gt;&lt;/high&gt;, with &lt;mono&gt;cp&lt;/mono&gt; often set to &lt;mono&gt;.01&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Minimize:&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;br&gt;
 
@@ -324,16 +301,22 @@ $$
 
 .pull-left45[
 
-Trees can also be used to perform regression tasks. Instead of impurity, regression trees attempt to &lt;high&gt;minimize within-node variance&lt;/high&gt; (or maximize node homogeneity): 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Trees can also be used to perform regression tasks. Instead of impurity, regression trees attempt to &lt;high&gt;minimize within-node variance&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
 
 `$$\large SSE = \sum_{i \in S_1}(y_i - \bar{y}_1)^2+\sum_{i \in S_2}(y_i - \bar{y}_2)^2$$`
-&lt;u&gt;Algorithm&lt;/u&gt;
 
-1 - &lt;high&gt;Split&lt;/high&gt; nodes to maximize &lt;b&gt;homogeneity gain&lt;/b&gt;.
-
-2 - &lt;high&gt;Repeat&lt;/high&gt; until pre-defined threshold (e.g., `minsplit`) splits are no longe possible.
-
-3 - &lt;high&gt;Prune&lt;/high&gt; tree to reasonable size.
+&lt;ul&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Algorithm:
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;1 - &lt;high&gt;Split&lt;/high&gt; nodes to maximize &lt;b&gt;homogeneity gain&lt;/b&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;2 - &lt;high&gt;Repeat&lt;/high&gt; until pre-defined threshold (e.g., &lt;mono&gt;minsplit&lt;/mono&gt;) splits are no longe possible.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;3 - &lt;high&gt;Prune&lt;/high&gt; tree to reasonable size.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -355,9 +338,10 @@ Trees can also be used to perform regression tasks. Instead of impurity, regress
 
 .pull-left4[
 
-Fit &lt;high&gt;decision trees&lt;/high&gt; in `caret` using `method = "rpart"`.
-
-`caret` will &lt;high&gt;choose automatically&lt;/high&gt; whether to use classification or regression trees depending on whether the criterion is a `factor` or not.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Fit &lt;high&gt;decision trees&lt;/high&gt; in &lt;mono&gt;caret&lt;/mono&gt; using &lt;mono&gt;method = "rpart"&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;caret&lt;/mono&gt; will &lt;high&gt;choose automatically&lt;/high&gt; whether to use classification or regression trees depending on whether the criterion is a &lt;mono&gt;factor&lt;/mono&gt; or not.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -402,20 +386,21 @@ class: center, middle
 
 &lt;p style="padding-top:1px"&gt;&lt;/p&gt;
 
-In [Random Forest](https://en.wikipedia.org/wiki/Random_forest), the criterion is modeled as the &lt;high&gt;aggregate prediction of a large number of decision trees&lt;/high&gt; each based on different features.
-&lt;br&gt;
 
-&lt;u&gt;Algorithm&lt;/u&gt;
-
-1 - &lt;high&gt;Repeat&lt;/high&gt; *n* times
-
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1 - &lt;high&gt;Resample&lt;/high&gt; data 
-
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2 - &lt;high&gt;Grow&lt;/high&gt; non-pruned decision tree
-
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Each split &lt;high&gt;consider only &lt;i&gt;m&lt;/i&gt; features&lt;/high&gt;
-
-2 - &lt;high&gt;Average&lt;/high&gt; fitted values
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;In &lt;a href="https://en.wikipedia.org/wiki/Random_forest"&gt;Random Forest&lt;/a&gt;, the criterion is modeled as the &lt;high&gt;aggregate prediction of a large number of decision trees&lt;/high&gt; each based on different features.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Algorithm:
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;1 - &lt;high&gt;Repeat&lt;/high&gt; &lt;i&gt;n&lt;/i&gt; times&lt;/span&gt;&lt;/li&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1 - &lt;high&gt;Resample&lt;/high&gt; data&lt;br&gt; 
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2 - &lt;high&gt;Grow&lt;/high&gt; non-pruned decision tree&lt;br&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Each split &lt;high&gt;consider only &lt;i&gt;m&lt;/i&gt;&lt;br&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;features&lt;/high&gt;
+    &lt;li&gt;&lt;span&gt;2 - &lt;high&gt;Average&lt;/high&gt; fitted values.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -437,8 +422,11 @@ In [Random Forest](https://en.wikipedia.org/wiki/Random_forest), the criterion i
 
 &lt;p style="padding-top:1px"&gt;&lt;/p&gt;
 
-Random forests make use of important machine learning elements, &lt;high&gt;resampling&lt;/high&gt; and &lt;high&gt;averaging&lt;/high&gt; that together are also referred to as &lt;high&gt;bagging&lt;/high&gt;. 
 
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Random forests make use of important machine learning elements, &lt;high&gt;resampling&lt;/high&gt; and &lt;high&gt;averaging&lt;/high&gt; that together are also referred to as &lt;high&gt;bagging&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
   &lt;col width="30%"&gt;
@@ -489,11 +477,11 @@ Random forests make use of important machine learning elements, &lt;high&gt;resa
 
 .pull-left4[
 
-Fit &lt;high&gt;decision trees&lt;/high&gt; in `caret` using `method = "rf"`.
-
-Just like CART, random forests can be used for &lt;high&gt;classification or regression&lt;/high&gt;.
-
-`caret` will &lt;high&gt;choose automatically&lt;/high&gt; whether to use classification or regression trees depending on whether the crition is a `factor` or not.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Fit &lt;high&gt;decision trees&lt;/high&gt; in &lt;mono&gt;caret&lt;/mono&gt; using &lt;mono&gt;method = "rf"&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Just like CART, random forests can be used for &lt;high&gt;classification or regression&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;mono&gt;caret&lt;/mono&gt; will &lt;high&gt;choose automatically&lt;/high&gt; whether to use classification or regression trees depending on whether the crition is a &lt;mono&gt;factor&lt;/mono&gt; or not.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -526,7 +514,7 @@ class: center,  middle
 
 &lt;br&gt;&lt;br&gt;
 
-# Evaluating model predictions with caret
+# Evaluating model predictions with &lt;mono&gt;caret&lt;/mono&gt;
 
 &lt;img src="https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/09/Caret-package-in-R.png" width="70%" style="display: block; margin: auto;" /&gt;
 
@@ -540,7 +528,11 @@ class: center,  middle
 
 .pull-left4[
 
-Use `createDataPartition()` to &lt;high&gt;split a dataset&lt;/high&gt; into separate training and test datasets.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Use &lt;mono&gt;createDataPartition()&lt;/mono&gt; to &lt;high&gt;split a dataset&lt;/high&gt; into separate training and test datasets.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
   &lt;col width="30%"&gt;
@@ -609,7 +601,11 @@ baselers_test &lt;- baselers %&gt;%
 
 .pull-left4[
 
-To &lt;high&gt;test model predictions&lt;/high&gt; with `caret`, all you need to do is get a vector of predictions from a new dataframe `newdata` using the `predict()` function:
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;To &lt;high&gt;test model predictions&lt;/high&gt; with `caret`, all you need to do is get a vector of predictions from a new dataframe `newdata` using the `predict()` function.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
   &lt;col width="30%"&gt;
@@ -669,7 +665,7 @@ postResample(pred = mod_pred,
 ---
 class: middle, center
 
-&lt;h1&gt;&lt;a href=https://therbootcamp.github.io/ML_2019Oct/_sessions/Prediction/Prediction_practical.html&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href=https://therbootcamp.github.io/AML_2020AMLD/_sessions/Prediction/Prediction_practical.html&gt;Practical&lt;/a&gt;&lt;/h1&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

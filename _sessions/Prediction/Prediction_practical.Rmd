@@ -3,7 +3,7 @@ title: "Prediction"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
-      <font style='font-style:normal'>Machine Learning with R</font><br>
+      <font style='font-style:normal'>Applied Machine Learning with R</font><br>
       <a href='https://therbootcamp.github.io/ML_2019Oct/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
@@ -17,7 +17,7 @@ author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0
         <i class='fab fa-linkedin' style='font-size: .9em;'></i>
       </a>
       <a href='https://therbootcamp.github.io'>
-        <font style='font-style:normal'>Basel R Bootcamp</font>
+        <font style='font-style:normal'>The R Bootcamp @ AMLD</font>
       </a>
     </td>
     <td style='width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none'>
@@ -35,8 +35,8 @@ knitr::opts_chunk$set(comment = NA,
                       fig.width = 6, 
                       fig.height = 6,
                       fig.align = 'center',
-                      echo = TRUE, 
-                      eval = TRUE, 
+                      echo = FALSE, 
+                      eval = FALSE, 
                       warning = FALSE,
                       message = FALSE)
 
@@ -61,15 +61,11 @@ By the end of this practical you will know how to:
 
 ## Tasks
 
-### College Graduation Rates
-
-In this section, we will again predict college graduation rates `Grad_Rate` from the `college_train` and `college_test` datasets.
-
 ### A - Setup
 
-1. Open your `BaselRBootcamp` R project. It should already have the folders `1_Data` and `2_Code`. Make sure that the data file(s) listed in the `Datasets` section are in your `1_Data` folder.
+1. Open your `RBootcamp_AMLD2020` R project. It should already have the folders `1_Data` and `2_Code`. Make sure that the data file(s) listed in the `Datasets` section are in your `1_Data` folder.
 
-2. Open a new R script. At the top of the script, using comments, write your name and the date. Save it as a new file called `Prediction_College_practical.R` in the `2_Code` folder.  
+2. Open a new R script and save it as a new file called `Prediction_College_practical.R` in the `2_Code` folder.
 
 3. Using `library()` load the set of packages for this practical listed in the packages section above.
 
@@ -92,8 +88,8 @@ college_test <- read_csv(file = "1_Data/college_test.csv")
 
 ```{r, echo = FALSE, eval = TRUE}
 # College data
-college_train <- read_csv(file = "../../1_Data/college_train.csv")
-college_test <- read_csv(file = "../../1_Data/college_test.csv")
+college_train <- read_csv(file = "1_Data/college_train.csv")
+college_test <- read_csv(file = "1_Data/college_test.csv")
 ```
 
 5. Take a look at the first few rows of each dataframe by printing them to the console.
@@ -104,35 +100,7 @@ college_train
 college_test
 ```
 
-6. Print the numbers of rows and columns of each dataset using the `dim()` function.
-
-```{r, echo = TRUE, eval = FALSE}
-# Print numbers of rows and columns
-dim(XXX)
-dim(XXX)
-```
-
-
-```{r}
-dim(college_train)
-dim(college_test)
-```
-
-
-7. Look at the names of the dataframes with the `names()` function.
-
-```{r, echo = TRUE, eval = FALSE}
-# Print the names of each dataframe
-names(XXX)
-names(XXX)
-```
-
-```{r}
-names(college_train)
-names(college_test)
-```
-
-8. Open each dataset in a new window using `View()`. Do they look ok?
+6. Open each dataset in a new window using `View()`. Do they look ok?
 
 ```{r, echo = TRUE, eval = FALSE}
 # Open each dataset in a window.
@@ -140,7 +108,7 @@ View(XXX)
 View(XXX)
 ```
 
-9. Again,  We need to do a little bit of data cleaning. Specifically, we need to convert all character columns to factors: Do this by running the following code:
+7. Again,  We need to do a little bit of data cleaning. Specifically, we need to convert all character columns to factors: Do this by running the following code:
 
 ```{r, eval = TRUE, echo = TRUE}
 # Convert all character columns to factor
@@ -205,19 +173,19 @@ grad_glm$finalModel
 summary(grad_glm)
 ```
 
-4. Using `predict()` save the fitted values of `grad_glm` object as `glm_fit`.
+4. Using `predict()` save the fitted values of `grad_glm` object as `glm_fitted`.
 
 ```{r, echo = TRUE, eval = FALSE}
 # Save fitted values of regression model
-glm_fit <- predict(XXX)
+glm_fitted <- predict(XXX)
 ```
 
 ```{r}
-glm_fit <- predict(grad_glm)
+glm_fitted <- predict(grad_glm)
 ```
 
 
-5. Print your `glm_fit` object, look at summary statistics with `summary(glm_fit)`, and create a histogram with `hist()` do they make sense?
+5. Print your `glm_fitted` object, look at summary statistics with `summary(glm_fitted)`, and create a histogram with `hist()` do they make sense?
 
 ```{r, echo = TRUE, eval = FALSE}
 # Explore regression model fits
@@ -240,7 +208,7 @@ hist(glm_fit)
 - for the `data` argument, use  `college_train`.
 - for the `method` argument, use `method = "rpart"` to create decision trees.
 - for the `trControl` argument, use your `ctrl_none` object you created before.
-- for the `tuneGrid` argument, use `cp = 0.01` to specify the value of the complexity parameter. This is a pretty low value which means your trees will be, relatively, complex, i.e., deep.
+- for the `tuneGrid` argument, use `cp = 0.01` to specify the value of the complexity parameter. This is a relatively low value which means your trees will be, relatively, complex, i.e., deep.
 
 ```{r, echo = TRUE, eval = FALSE}
 grad_rpart <- train(form = XX ~ .,
@@ -265,19 +233,18 @@ grad_rpart$finalModel
 plot(as.party(grad_rpart$finalModel))
 ```
 
-
-8. Using `predict()`, save the fitted values of `grad_rpart` object as `rpart_predfit`.
+8. Using `predict()`, save the fitted values of `grad_rpart` object as `rpart_fitted`.
 
 ```{r, echo = TRUE, eval = FALSE}
 # Save fitted values of decision tree model
-rpart_predfit <- predict(XXX)
+rpart_fitted <- predict(XXX)
 ```
 
 ```{r}
-rpart_predfit <- predict(grad_rpart)
+rpart_fitted <- predict(grad_rpart)
 ```
 
-9. Print your `rpart_predfit` object, look at summary statistics with `summary(rpart_predfit)`, and create a histogram with `hist()`. Do they make sense?
+9. Print your `rpart_fitted` object, look at summary statistics with `summary(rpart_fitted)`, and create a histogram with `hist()`. Do they make sense?
 
 ```{r, echo = TRUE, eval = FALSE}
 # Explore decision tree fits
@@ -318,18 +285,18 @@ grad_rf <- train(form = Grad.Rate ~ .,   # Predict grad
                  tuneGrid = expand.grid(mtry = 2))  # Set number of features randomly selected
 ```
 
-11. Using `predict()`, save the fitted values of `grad_rf` object as `rf_fit`.
+11. Using `predict()`, save the fitted values of `grad_rf` object as `rf_fitted`.
 
 ```{r, echo = TRUE, eval = FALSE}
 # Save fitted values of random forest model
-rf_fit <- predict(XXX)
+rf_fitted <- predict(XXX)
 ```
 
 ```{r}
-rf_fit <- predict(grad_rf)
+rf_fitted <- predict(grad_rf)
 ```
 
-12. Print your `rf_fit` object, look at summary statistics with `summary(rf_fit)`, and create a histogram with `hist()`. Do they make sense?
+12. Print your `rf_fitted` object, look at summary statistics with `summary(rf_fitted)`, and create a histogram with `hist()`. Do they make sense?
 
 ```{r, echo = TRUE, eval = FALSE}
 # Explore random forest fits
@@ -357,7 +324,7 @@ criterion_train <- XXX$XXX
 criterion_train <- college_train$Grad.Rate
 ```
 
-14. Using `postResample()`, determine the fitting performance of each of your models separately. Make sure to set your `criterion_train` values to the `obs` argument, and your true model fits `XX_fit` to the `pred` argument.
+14. Using `postResample()`, determine the fitting performance of each of your models separately. Make sure to set your `criterion_train` values to the `obs` argument, and your true model fits `XX_fitted` to the `pred` argument.
 
 ```{r, echo = TRUE, eval = FALSE}
 # Calculate fitting accuracies of each model
@@ -376,18 +343,16 @@ postResample(pred = XXX, obs = XXX)
 
 ```{r}
 # Regression
-postResample(pred = glm_fit, obs = criterion_train)
+postResample(pred = glm_fitted, obs = criterion_train)
 
 # Decision Trees
-postResample(pred = rpart_predfit, obs = criterion_train)
+postResample(pred = rpart_fitted, obs = criterion_train)
 
 # Random Forests
-postResample(pred = rf_fit, obs = criterion_train)
+postResample(pred = rf_fitted, obs = criterion_train)
 ```
 
-15. Which one had the best fit? What was the fitting MAE of each model?
-
-(Optional). If you'd like to, try visualizing the fitting results using the plotting code shown in the Examples tab above. Ask for help if you need it!
+15. Which one had the best fit? What was the fitting MAE of each model? Optional: If you'd like to, try visualizing the fitting results using the plotting code shown in the Examples tab above.
 
 ```{r}
 
@@ -524,34 +489,13 @@ postResample(pred = rf_pred, obs = criterion_test)
 
 7. If someone came to you and asked "If I use your model in the future to predict the graduation rate of a new college, how accurate do you think it would be?", what would you say?
 
-### House Prices in King County, Washington
+### D - A different data Set House Prices in King County, Washington
 
 In this section, we will work with a different data set. Specifically, we will predict the prices of houses in King County Washington (home of Seattle, [which you can thank for this](https://qz.com/208457/a-cartographic-guide-to-starbucks-global-domination/)) using the `house_train` and `house_test` datasets.
 
-### D - Setup
+#### Setup
 
-1. Make sure you are still working in your `BaselRBootcamp` R project, with the folders `1_Data` and `2_Code`. Make sure that the data file(s) listed in the `Datasets` section above are in your `1_Data` folder
-
-2. Open a new R script. At the top of the script, using comments, write your name and the date. Save it as a new file called `Prediction_HousePrices_practical.R` in the `2_Code` folder.  
-
-3. Using `library()` load the set of packages for this practical listed in the packages section above.
-
-```{r, eval = FALSE, echo = TRUE}
-# Load packages necessary for this script
-library(tidyverse)
-library(caret)
-library(party)
-library(partykit)
-```
-
-```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE}
-library(tidyverse)
-library(caret)
-library(party)
-library(partykit)
-```
-
-4. Run the code below to load each of the datasets listed in the `Datasets` as new objects.
+1. Run the code below to load each of the datasets listed in the `Datasets` as new objects.
 
 ```{r, echo = TRUE, eval = FALSE, message = FALSE, warning = FALSE}
 # house data
@@ -561,11 +505,11 @@ house_test <- read_csv(file = "1_Data/house_test.csv")
 
 ```{r, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE}
 # house data
-house_train <- read_csv(file = "../../1_Data/house_train.csv")
-house_test <- read_csv(file = "../../1_Data/house_test.csv")
+house_train <- read_csv(file = "1_Data/house_train.csv")
+house_test <- read_csv(file = "1_Data/house_test.csv")
 ```
 
-5. Take a look at the first few rows of each dataframe by printing them to the console.
+2. Take a look at the first few rows of each dataframe by printing them to the console.
 
 ```{r, echo = FALSE, eval = FALSE}
 # Print dataframes to the console
@@ -573,23 +517,7 @@ house_train
 house_test
 ```
 
-6. Print the numbers of rows and columns of each dataset using the `dim()` function.
-
-```{r, echo = TRUE, eval = FALSE}
-# Print numbers of rows and columns
-dim(XXX)
-dim(XXX)
-```
-
-7. Look at the names of the dataframes with the `names()` function.
-
-```{r, echo = TRUE, eval = FALSE}
-# Print the names of each dataframe
-names(XXX)
-names(XXX)
-```
-
-8. Open each dataset in a new window using `View()`. Do they look ok?
+3. Open each dataset in a new window using `View()`. Do they look ok?
 
 ```{r, echo = TRUE, eval = FALSE}
 # Open each dataset in a window.
@@ -597,7 +525,7 @@ View(XXX)
 View(XXX)
 ```
 
-9. Again, we need to do a little bit of data cleaning. Convert all character columns to factor.
+4. Again, we need to do a little bit of data cleaning. Convert all character columns to factor.
 
 ```{r, echo = TRUE, eval = FALSE}
 # Convert all character columns to factor
@@ -608,7 +536,7 @@ house_test <- house_test %>%
           mutate_if(is.character, factor)
 ```
 
-### E - Fitting
+#### Fitting
 
 Your goal in the following models is to predict `price`, the selling price of homes in King County WA.
 
@@ -625,8 +553,6 @@ ctrl_none <- trainControl(method = "XXX")
 ```{r}
 ctrl_none <- trainControl(method = "none")
 ```
-
-#### Regression
 
 2. Using `train()`, fit a regression model called `price_glm` predicting `price` using all features in `house_train`. Specifically,...
 
@@ -650,49 +576,19 @@ price_glm <- train(form = price ~ .,
                   trControl = ctrl_none)
 ```
 
-
-3. Explore your `price_glm` object by looking at `price_glm$finalModel` and using `summary()`. What do you find?
-
-```{r, echo = TRUE, eval = FALSE}
-price_glm$XXX
-summary(XXX)
-```
-
-```{r}
-price_glm$finalModel
-summary(price_glm)
-```
-
-4. Using `predict()`, save the fitted values of `price_glm` object as `glm_fit`.
+3. Using `predict()`, save the fitted values of `price_glm` object as `glm_fitted`.
 
 ```{r, echo = TRUE, eval = FALSE}
 # Save fitted values of regression model
-glm_fit <- predict(XXX)
+glm_fitted <- predict(XXX)
 ```
 
 ```{r}
 # Save fitted values of regression model
-glm_fit <- predict(price_glm)
+glm_fitted <- predict(price_glm)
 ```
 
-5. Print your `glm_fit` object, look at summary statistics with `summary(glm_fit)`, and create a histogram with `hist()`. Do they make sense?
-
-```{r, echo = TRUE, eval = FALSE}
-# Explore regression model fits
-XXX
-summary(XXX)
-hist(XXX)
-```
-
-```{r}
-glm_fit[1:10]  # Only first 10
-summary(glm_fit)
-hist(glm_fit)
-```
-
-#### Decision Trees
-
-6. Using `train()`, fit a decision tree model called `price_rpart` predicting `price` using all features in `house_train`. Specifically,...
+4. Using `train()`, fit a decision tree model called `price_rpart` predicting `price` using all features in `house_train`. Specifically,...
 
 - for the `form` argument, use `price ~ .`.
 - for the `data` argument, use  `house_train`.
@@ -716,44 +612,18 @@ price_rpart <- train(form = price ~ .,
                   tuneGrid = expand.grid(cp = .01))   # Set complexity parameter
 ```
 
-7. Explore your `price_rpart` object by looking at `price_rpart$finalModel` and plotting it with `plot(as.party(price_rpart$finalModel))`. What do you find?
-
-```{r}
-price_rpart$finalModel
-plot(as.party(price_rpart$finalModel))
-```
-
-8. Using `predict()` save the fitted values of `price_rpart` object as `rpart_predfit`.
+5. Using `predict()` save the fitted values of `price_rpart` object as `rpart_fitted`.
 
 ```{r, echo = TRUE, eval = FALSE}
 # Save fitted values of decision tree model
-rpart_predfit <- predict(XXX)
+rpart_fitted <- predict(XXX)
 ```
 
 ```{r}
-rpart_predfit <- predict(price_rpart)
+rpart_fitted <- predict(price_rpart)
 ```
 
-9. Print your `rpart_predfit` object, look at summary statistics with `summary(rpart_predfit)`, and create a histogram with `hist()`. Do they make sense?
-
-```{r, echo = TRUE, eval = FALSE}
-# Explore decision tree fits
-XXX
-summary(XXX)
-hist(XXX)
-```
-
-
-```{r}
-rpart_predfit[1:10]   # Only first 10 values
-summary(rpart_predfit)
-hist(rpart_predfit)
-```
-
-
-#### Random Forests
-
-10. Using `train()`, fit a random forest model called `price_rf` predicting `price` using all features in `house_train`. Specifically,...
+6. Using `train()`, fit a random forest model called `price_rf` predicting `price` using all features in `house_train`. Specifically,...
 
 - for the `form` argument, use `price ~ .`.
 - for the `data` argument, use  `house_train` in the data argument.
@@ -778,34 +648,18 @@ price_rf <- train(form = price ~ .,
                  tuneGrid = expand.grid(mtry = 2))  # Set number of features randomly selected
 ```
 
-
-11. Using `predict()` save the fitted values of `price_rf` object as `rf_fit`.
+7. Using `predict()` save the fitted values of `price_rf` object as `rf_fitted`.
 
 ```{r, echo = TRUE, eval = FALSE}
 # Save fitted values of random forest model
-rf_fit <- predict(XXX)
+rf_fitted <- predict(XXX)
 ```
 
 ```{r}
-rf_fit <- predict(price_rf)
+rf_fitted <- predict(price_rf)
 ```
 
-12. Print your `rf_fit` object, look at summary statistics with `summary(rf_fit)`, and create a histogram with `hist()`. Do they make sense?
-
-```{r, echo = TRUE, eval = FALSE}
-# Explore random forest fits
-XXX
-summary(XXX)
-hist(XXX)
-```
-
-```{r}
-rf_fit[1:10]   # Only first 10 cases
-summary(rf_fit)
-hist(rf_fit)
-```
-
-#### Assess accuracy
+#### Assess fitting accuracy
 
 13. Save the true training criterion values (`house_train$price`) as a vector called `criterion_train`.
 
@@ -841,18 +695,16 @@ postResample(pred = XXX, obs = XXX)
 # obs = criterion_train
 
 # Regression
-postResample(pred = glm_fit, obs = criterion_train)
+postResample(pred = glm_fitted, obs = criterion_train)
 
 # Decision Trees
-postResample(pred = rpart_predfit, obs = criterion_train)
+postResample(pred = rpart_fitted, obs = criterion_train)
 
 # Random Forests
-postResample(pred = rf_fit, obs = criterion_train)
+postResample(pred = rf_fitted, obs = criterion_train)
 ```
 
-15. Which one had the best fits? What was the fitting MAE of each model?
-
-(Optional). If you'd like to, try visualizing the fitting results using the plotting code shown in the Examples tab above. Ask for help if you need it!
+15. Which one had the best fits? What was the fitting MAE of each model? Optional: If you'd like to, try visualizing the fitting results using the plotting code shown in the Examples tab above. Ask for help if you need it!
 
 
 ```{r}
@@ -895,7 +747,7 @@ ggplot(data = accuracy,
            label = round(accuracy_agg$mae, 2))
 ```
 
-### F - Prediction
+#### Assess prediction accuracy
 
 1. Save the criterion values from the test data set `house_test$price` as a new vector called `criterion_test`.
 
@@ -977,7 +829,7 @@ postResample(pred = rf_pred, obs = criterion_test)
 
 7. If someone came to you and asked "If I use your model in the future to predict the price of a new house, how accurate do you think it would be?", what would you say?
 
-### G - Exploring model tuning parameters
+### E - Exploring model tuning parameters
 
 1. In all of your decision tree models so far, you have been setting the complexity parameter to 0.01. Try setting it to a larger value of 0.2 and see how your decision trees change (by plotting them using `plot(as.party(XXX_rpart$finalModel))`). Do they get more or less complicated? How does increasing this value affect fitting and prediction performance? If you are interested in learning more about this parameter, look at the help menu with `?rpart.control`.
 
@@ -996,148 +848,6 @@ mod <- train(form = price ~ .l,
 
 ```
 
-### Z - Challenges
-
-1. So far you've probably been using most, if not all, available features in predicting house sales. But imagine someone came to you and said "I need to know how much a set of new houses will sell for, but I only have access to three features `bedrooms`, `bathrooms`, and `sqft_living`. Which of your models should I use and how accurate will they be? How would you answer that question? Use your modelling techniques to find out!
-
-```{r}
-price_glm <- train(form = price ~ bedrooms + bathrooms + sqft_living,
-                   data = house_train,
-                   method = "glm",
-                   trControl = ctrl_none)
-
-glm_fit <- predict(price_glm)
-
-price_rpart <- train(form = price ~ bedrooms + bathrooms + sqft_living,
-                     data = house_train,
-                     method = "rpart",
-                     trControl = ctrl_none,
-                     tuneGrid = expand.grid(cp = .01))
-
-rpart_predfit <- predict(price_rpart)
-
-price_rf <- train(form = price ~ bedrooms + bathrooms + sqft_living,
-                  data = house_train,
-                  method = "rf",
-                  trControl = ctrl_none,
-                  tuneGrid = expand.grid(mtry = 2))
-
-rf_fit <- predict(price_rf)
-
-# Get goodness of fit indices for training set
-# Regression
-postResample(pred = glm_fit, obs = criterion_train)
-
-# Decision Trees
-postResample(pred = rpart_predfit, obs = criterion_train)
-
-# Random Forests
-postResample(pred = rf_fit, obs = criterion_train)
-
-# Get predictions
-
-# Regression
-glm_pred <- predict(price_glm, 
-                    newdata = house_test)
-
-# Decision Trees
-rpart_pred <- predict(price_rpart, 
-                      newdata = house_test)
-
-# Random Forests
-rf_pred <- predict(price_rf, 
-                   newdata = house_test)
-
-# Get goodness of fit indices for test sets
-# Regression
-postResample(pred = glm_pred, obs = criterion_test)
-
-# Decision Trees
-postResample(pred = rpart_pred, obs = criterion_test)
-
-# Random Forests
-postResample(pred = rf_pred, obs = criterion_test)
-```
-
-2. Repeat your modelling process, but now do a classification task. Specifically, predict whether or not a house sells for at least \$1,000,000. To do this, you'll first need to create a new column called `million` in both your `house_train` and `house_test` datasets (the code below should help you). Then, use your best modelling techniques to make this prediction. How accurate are your models in predicting whether or not a house will sell for over \$1,000,000? Don't forget to use the `confusionMatrix()` function instead of `postResample()` to evaluate your model's accuracy!
-
-```{r echo=TRUE}
-# Add million column to house_train and house_test
-#  A factor indicating whether or not a house sells for
-#   over 1,000,0000
-house_train <- house_train %>%
-  mutate(million = factor(price > 1000000))
-
-house_test <- house_test %>%
-  mutate(million = factor(price > 1000000))
-```
-
-```{r}
-million_glm <- train(form = million ~ . -price,
-                   data = house_train,
-                   method = "glm",
-                   trControl = ctrl_none)
-
-glm_fit <- predict(million_glm)
-
-million_rpart <- train(form = million ~ . -price,
-                     data = house_train,
-                     method = "rpart",
-                     trControl = ctrl_none,
-                     tuneGrid = expand.grid(cp = .01))
-
-rpart_predfit <- predict(million_rpart)
-
-million_rf <- train(form = million ~ . -price,
-                  data = house_train,
-                  method = "rf",
-                  trControl = ctrl_none,
-                  tuneGrid = expand.grid(mtry = 2))
-
-rf_fit <- predict(million_rf)
-
-criterion_train <- house_train$million
-
-# Get goodness of fit indices for training set
-# Regression
-confusionMatrix(data = glm_fit,              # This is the prediction!
-                reference = criterion_train) # This is the truth!
-
-# Decision Trees
-confusionMatrix(data = rpart_predfit,        # This is the prediction!
-                reference = criterion_train) # This is the truth!
-# Random Forests
-confusionMatrix(data = rf_fit,               # This is the prediction!
-                reference = criterion_train) # This is the truth!
-# Get predictions
-
-# Regression
-glm_pred <- predict(million_glm, 
-                    newdata = house_test)
-
-# Decision Trees
-rpart_pred <- predict(million_rpart, 
-                      newdata = house_test)
-
-# Random Forests
-rf_pred <- predict(million_rf, 
-                   newdata = house_test)
-
-# Get goodness of fit indices for test sets
-
-# create test criterion
-criterion_test <- house_test$million
-# Regression
-confusionMatrix(data = glm_pred,            # This is the prediction!
-                reference = criterion_test) # This is the truth!
-
-# Decision Trees
-confusionMatrix(data = rpart_pred,          # This is the prediction!
-                reference = criterion_test) # This is the truth!
-# Random Forests
-confusionMatrix(data = rf_pred,             # This is the prediction!
-                reference = criterion_test) # This is the truth!
-```
 
 ## Examples
 
@@ -1351,10 +1061,10 @@ library(ggthemes)
 ```{r, message = FALSE, eval = TRUE, echo = FALSE}
 # Load datasets locally
 library(tidyverse)
-college_train <- read_csv("../../1_Data/college_train.csv")
-college_test <- read_csv("../../1_Data/college_test.csv")
-house_train <- read_csv("../../1_Data/house_train.csv")
-house_test <- read_csv("../../1_Data/house_test.csv")
+college_train <- read_csv("1_Data/college_train.csv")
+college_test <- read_csv("1_Data/college_test.csv")
+house_train <- read_csv("1_Data/house_train.csv")
+house_test <- read_csv("1_Data/house_test.csv")
 ```
 
 - The `college_train` and `college_test` data are taken from the `College` dataset in the `ISLR` package. They contain statistics for a large number of US Colleges from the 1995 issue of US News and World Report.

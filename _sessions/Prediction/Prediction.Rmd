@@ -1,11 +1,11 @@
 ---
 title: "Prediction"
-author: "Machine Learning with R<br>
+author: "Applied Machine Learning with R<br>
   <a href='https://therbootcamp.github.io'>
-    Basel R Bootcamp
+    The R Bootcamp @ AMLD
   </a>
   <br>
-  <a href='https://therbootcamp.github.io/ML_2019Oct/'>
+  <a href='https://therbootcamp.github.io/AML_2020AMLD/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -17,7 +17,7 @@ author: "Machine Learning with R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "October 2019"
+date: "January 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-      Machine Learning with R | October 2019
+      Applied Machine Learning with R @ AMLD  | January 2020
       </font>
     </a>
     </span>
@@ -68,7 +68,7 @@ options(digits = 4)
 source("https://raw.githubusercontent.com/therbootcamp/ML_2019Oct/master/_materials/code/baselrbootcamp_palettes.R")
 
 
-baselers <- read_csv("../../1_Data/baselers.csv")
+baselers <- read_csv("1_Data/baselers.csv")
 ```
 
 ```{r, echo = FALSE ,message = FALSE, warning = FALSE}
@@ -96,45 +96,15 @@ present <- tibble(id = 91:95,
                criterion = rep("?", 5))
 ```
 
-
-# Prediction is...
-
-.pull-left45[
-
-<p>
-<font style="font-size:32px"><i>Prediction is very difficult, especially if it's about the future.</i></font>
-<br><br>
-Nils Bohr, Nobel Laureate in Physics
-<br><br>
-<font style="font-size:32px"><i>An economist is an expert who will know tomorrow why the things he predicted yesterday didn't happen today.</i></font>
-<br><br>
-
-Evan Esar, Humorist
-
-</p>
-
-]
-
-.pull-right45[
-
-<p align = "center">
-<img src="image/bohr.jpg"><br>
-<font style="font-size:10px">from <a href="https://futurism.com/know-your-scientist-niels-bohr-the-father-of-the-atom">futurism.com</a></font>
-</p>
-
-]
-
----
-
-# Hold-out data
+# Predict hold-out data
 
 .pull-left45[
 
-Model performance must be evaluated as true prediction on an <high>unseen data set</high>.
-
-The unseen data set can be <high>naturally</high> occurring, e.g., using 2019 stock prizes to evaluate a model fit using 2018 stock prizes. 
-
-More commonly unseen data is created by <high>splitting the available data</high> into a training set and a test set. 
+<ul>
+  <li class="m1"><span>Model performance must be evaluated as true prediction on an <high>unseen data set</high>.</span></li>
+  <li class="m2"><span>The unseen data set can be <high>naturally</high> occurring, e.g., using 2019 stock prizes to evaluate a model fit using 2018 stock prizes.</span></li>
+  <li class="m3"><span>More commonly unseen data is created by <high>splitting the available data</high> into a training set and a test set.</span></li>
+</ul>
 
 ]
 
@@ -149,34 +119,9 @@ More commonly unseen data is created by <high>splitting the available data</high
 
 ---
 
-# Training
-
-Training a model means to <high>fit the model</high> to data by finding the parameter combination that <high>minizes some error function</high>, e.g., mean squared error (MSE).
-
-
-<p align = "center" style="padding-top:30px">
-<img src="image/training_flow.png" height=350px>
-</p>
-
-
----
-
-# Test
-
-To test a model means to <high>evaluate the prediction error</high> for a fitted model, i.e., for a <high>fixed parameter combination</high>.
-
-
-<p align = "center" style="padding-top:30px">
-<img src="image/testing_flow.png" height=350px>
-</p>
-
-
----
-
 # Why do we separate training from testing?
 
-<br>
-<p align = "center"><font size = 6><i>"Can you come up with a model that will perfectly fit the training criterion but is worthless in predicting test data?"</i></font><br><br>
+<br><br>
 
 .pull-left45[
 
@@ -203,7 +148,6 @@ knitr::kable(present, format = "markdown")
 ]
 
 
-
 ---
 
 .pull-left4[
@@ -211,11 +155,12 @@ knitr::kable(present, format = "markdown")
 <br><br>
 # Overfitting
 
-Occurs when a model <high>fits data too closely</high> and therefore <high>fails to reliably predict</high> future observations. 
+<ul>
+  <li class="m1"><span>Occurs when a model <high>fits data too closely</high> and therefore <high>fails to reliably predict</high> future observations.</span></li><br><br>
+  <li class="m2"><span>In other words, overfitting occurs when a model <high>'mistakes' random noise for a predictable signal</high>.</span></li><br><br>
+  <li class="m3"><span>More <high>complex models</high> are more <high>prone to overfitting</high>.</span></li>
+</ul>
 
-In other words, overfitting occurs when a model <high>'mistakes' random noise for a predictable signal</high>.
-
-More <high>complex models</high> are more <high>prone to overfitting</high>. 
 
 ]
 
@@ -313,6 +258,32 @@ ggpubr::ggarrange(overfit_gg, fit_gg)
 ```
 
 
+
+---
+
+# Training
+
+<ul>
+  <li class="m1"><span>Training a model means to <high>fit the model</high> to data by finding the parameter combination that <high>minizes some error function</high>, e.g., mean squared error (MSE).</span></li><br><br>
+</ul>
+
+<p align = "center">
+<img src="image/training_flow.png" height=350px>
+</p>
+
+---
+
+# Test
+
+<ul style="margin-bottom:-20px">
+  <li class="m1"><span>To test a model means to <high>evaluate the prediction error</high> for a fitted model, i.e., for a <high>fixed parameter combination</high>.</span></li><br><br>
+</ul>
+
+<p align = "center">
+<img src="image/testing_flow.png" height=350px>
+</p>
+
+
 ---
 class: center, middle
 
@@ -333,10 +304,10 @@ class: center, middle
 
 .pull-left45[
 
-CART is short for <high>Classification and Regression Trees</high>, which are often just called <high>Decision trees</high>.
-
-In [decision trees](https://en.wikipedia.org/wiki/Decision_tree), the criterion is modeled as a <high>sequence of logical TRUE or FALSE questions</high>.
-<br><br>
+<ul>
+  <li class="m1"><span>CART is short for <high>Classification and Regression Trees</high>, which are often just called <high>Decision trees</high>.</span></li><br>
+  <li class="m2"><span>In <a href="https://en.wikipedia.org/wiki/Decision_tree">decision trees</a>, the criterion is modeled as a <high>sequence of logical TRUE or FALSE questions</high>.</span></li><br><br>
+</ul>
 
 ]
 
@@ -353,15 +324,17 @@ In [decision trees](https://en.wikipedia.org/wiki/Decision_tree), the criterion 
 
 .pull-left45[
 
-Classification trees (and regression trees) are created using a relatively simple <high>three-step algorithm</high>. 
-
-<u>Algorithm</u>
-
-1 - <high>Split</high> nodes to maximize <b>purity gain</b> (e.g., Gini gain).
-
-2 - <high>Repeat</high> until pre-defined threshold (e.g., `minsplit`) splits are no longer possible.
-
-3 - <high>Prune</high> tree to reasonable size.
+<ul>
+  <li class="m1"><span>Classification trees (and regression trees) are created using a relatively simple <high>three-step algorithm</high>.</span></li><br>
+  <li class="m2"><span>Algorithm:
+  <br><br>
+  <ul class="level">
+    <li><span>1 - <high>Split</high> nodes to maximize <b>purity gain</b> (e.g., Gini gain).</span></li><br>
+    <li><span>2 - <high>Repeat</high> until pre-defined threshold (e.g., `minsplit`) splits are no longer possible.</span></li><br>
+    <li><span>3 - <high>Prune</high> tree to reasonable size.</span></li>
+  </ul>
+  </span></li>
+</ul>
 
 ]
 
@@ -378,17 +351,20 @@ Classification trees (and regression trees) are created using a relatively simpl
 
 .pull-left45[
 
-Classification trees attempt to <high>minize node impurity</high> using, e.g., the <high>Gini coefficient</high>.
+<ul>
+  <li class="m1"><span>Classification trees attempt to <high>minize node impurity</high> using, e.g., the <high>Gini coefficient</high>.</span></li>
+</ul>
 
 
 $$\large Gini(S) = 1 - \sum_j^kp_j^2$$
 
-Nodes are <high>split</high> using the variable and split value that <high>maximizes Gini gain</high>. 
-
+<ul>
+  <li class="m2"><span>Nodes are <high>split</high> using the variable and split value that <high>maximizes Gini gain</high>.</span></li>
+</ul>
 
 $$Gini \; gain = Gini(S) - Gini(A,S)$$
 
-with
+<p style="padding:0;margin:0" align="center">with</p>
 
 $$Gini(A, S) = \sum \frac{n_i}{n}Gini(S_i)$$
 
@@ -410,9 +386,10 @@ $$Gini(A, S) = \sum \frac{n_i}{n}Gini(S_i)$$
 
 .pull-left45[
 
-Classification trees are <high>pruned</high> back such that every split has a purity gain of at least <high><mono>cp</mono></high>, with `cp` typically set to `.01`.  
-
-Minimize:
+<ul>
+  <li class="m1"><span>Classification trees are <high>pruned</high> back such that every split has a purity gain of at least <high><mono>cp</mono></high>, with <mono>cp</mono> often set to <mono>.01</mono>.</span></li>
+  <li class="m2"><span>Minimize:</span></li>
+</ul>
 
 <br>
 
@@ -440,16 +417,22 @@ $$
 
 .pull-left45[
 
-Trees can also be used to perform regression tasks. Instead of impurity, regression trees attempt to <high>minimize within-node variance</high> (or maximize node homogeneity): 
+<ul>
+  <li class="m1"><span>Trees can also be used to perform regression tasks. Instead of impurity, regression trees attempt to <high>minimize within-node variance</high>.</span></li><br>
+</ul>
 
 $$\large SSE = \sum_{i \in S_1}(y_i - \bar{y}_1)^2+\sum_{i \in S_2}(y_i - \bar{y}_2)^2$$
-<u>Algorithm</u>
 
-1 - <high>Split</high> nodes to maximize <b>homogeneity gain</b>.
-
-2 - <high>Repeat</high> until pre-defined threshold (e.g., `minsplit`) splits are no longe possible.
-
-3 - <high>Prune</high> tree to reasonable size.
+<ul>
+  <li class="m2"><span>Algorithm:
+  <br><br>
+  <ul class="level">
+    <li><span>1 - <high>Split</high> nodes to maximize <b>homogeneity gain</b>.</span></li><br>
+    <li><span>2 - <high>Repeat</high> until pre-defined threshold (e.g., <mono>minsplit</mono>) splits are no longe possible.</span></li><br>
+    <li><span>3 - <high>Prune</high> tree to reasonable size.</span></li>
+  </ul>
+  </span></li>
+</ul>
 
 ]
 
@@ -471,9 +454,10 @@ $$\large SSE = \sum_{i \in S_1}(y_i - \bar{y}_1)^2+\sum_{i \in S_2}(y_i - \bar{y
 
 .pull-left4[
 
-Fit <high>decision trees</high> in `caret` using `method = "rpart"`.
-
-`caret` will <high>choose automatically</high> whether to use classification or regression trees depending on whether the criterion is a `factor` or not.
+<ul>
+  <li class="m1"><span>Fit <high>decision trees</high> in <mono>caret</mono> using <mono>method = "rpart"</mono>.</span></li>
+  <li class="m2"><span><mono>caret</mono> will <high>choose automatically</high> whether to use classification or regression trees depending on whether the criterion is a <mono>factor</mono> or not.</span></li>
+</ul>
 
 ]
 
@@ -518,20 +502,21 @@ class: center, middle
 
 <p style="padding-top:1px"></p>
 
-In [Random Forest](https://en.wikipedia.org/wiki/Random_forest), the criterion is modeled as the <high>aggregate prediction of a large number of decision trees</high> each based on different features.
-<br>
 
-<u>Algorithm</u>
-
-1 - <high>Repeat</high> *n* times
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - <high>Resample</high> data 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - <high>Grow</high> non-pruned decision tree
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each split <high>consider only <i>m</i> features</high>
-
-2 - <high>Average</high> fitted values
+<ul>
+  <li class="m1"><span>In <a href="https://en.wikipedia.org/wiki/Random_forest">Random Forest</a>, the criterion is modeled as the <high>aggregate prediction of a large number of decision trees</high> each based on different features.</span></li><br>
+  <li class="m2"><span>Algorithm:
+  <br><br>
+  <ul class="level">
+    <li><span>1 - <high>Repeat</high> <i>n</i> times</span></li>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - <high>Resample</high> data<br> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - <high>Grow</high> non-pruned decision tree<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each split <high>consider only <i>m</i><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;features</high>
+    <li><span>2 - <high>Average</high> fitted values.</span></li><br>
+  </ul>
+  </span></li>
+</ul>
 
 ]
 
@@ -553,8 +538,11 @@ In [Random Forest](https://en.wikipedia.org/wiki/Random_forest), the criterion i
 
 <p style="padding-top:1px"></p>
 
-Random forests make use of important machine learning elements, <high>resampling</high> and <high>averaging</high> that together are also referred to as <high>bagging</high>. 
 
+
+<ul>
+  <li class="m1"><span>Random forests make use of important machine learning elements, <high>resampling</high> and <high>averaging</high> that together are also referred to as <high>bagging</high>.</span></li>
+</ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
   <col width="30%">
@@ -605,11 +593,11 @@ Random forests make use of important machine learning elements, <high>resampling
 
 .pull-left4[
 
-Fit <high>decision trees</high> in `caret` using `method = "rf"`.
-
-Just like CART, random forests can be used for <high>classification or regression</high>.
-
-`caret` will <high>choose automatically</high> whether to use classification or regression trees depending on whether the crition is a `factor` or not.
+<ul>
+  <li class="m1"><span>Fit <high>decision trees</high> in <mono>caret</mono> using <mono>method = "rf"</mono>.</span></li><br>
+  <li class="m2"><span>Just like CART, random forests can be used for <high>classification or regression</high>.</span></li><br>
+  <li class="m3"><span><mono>caret</mono> will <high>choose automatically</high> whether to use classification or regression trees depending on whether the crition is a <mono>factor</mono> or not.</span></li>
+</ul>
 
 ]
 
@@ -642,7 +630,7 @@ class: center,  middle
 
 <br><br>
 
-# Evaluating model predictions with caret
+# Evaluating model predictions with <mono>caret</mono>
 
 ```{r, echo = FALSE, out.width = "70%"}
 knitr::include_graphics("https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/09/Caret-package-in-R.png")
@@ -661,7 +649,11 @@ data(cars)
 
 .pull-left4[
 
-Use `createDataPartition()` to <high>split a dataset</high> into separate training and test datasets.
+<ul>
+  <li class="m1"><span>Use <mono>createDataPartition()</mono> to <high>split a dataset</high> into separate training and test datasets.</span></li>
+</ul>
+
+<br>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
   <col width="30%">
@@ -729,7 +721,11 @@ baselers_test <- baselers %>%
 
 .pull-left4[
 
-To <high>test model predictions</high> with `caret`, all you need to do is get a vector of predictions from a new dataframe `newdata` using the `predict()` function:
+<ul>
+  <li class="m1"><span>To <high>test model predictions</high> with `caret`, all you need to do is get a vector of predictions from a new dataframe `newdata` using the `predict()` function.</span></li>
+</ul>
+
+<br>
 
 <table style="cellspacing:0; cellpadding:0; border:none;">
   <col width="30%">
@@ -788,7 +784,7 @@ postResample(pred = mod_pred,
 ---
 class: middle, center
 
-<h1><a href=https://therbootcamp.github.io/ML_2019Oct/_sessions/Prediction/Prediction_practical.html>Practical</a></h1>
+<h1><a href=https://therbootcamp.github.io/AML_2020AMLD/_sessions/Prediction/Prediction_practical.html>Practical</a></h1>
 
 
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
-    <title>Optimization</title>
+    <title>Tuning</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Machine Learning with R   Basel R Bootcamp" />
+    <meta name="author" content="Applied Machine Learning with R   The R Bootcamp @ AMLD" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
@@ -11,9 +11,9 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Optimization
-### Machine Learning with R<br> <a href='https://therbootcamp.github.io'> Basel R Bootcamp </a> <br> <a href='https://therbootcamp.github.io/ML_2019Oct/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-### October 2019
+# Tuning
+### Applied Machine Learning with R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp @ AMLD </a> <br> <a href='https://therbootcamp.github.io/AML_2020AMLD/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### January 2020
 
 ---
 
@@ -34,7 +34,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Machine Learning with R | October 2019
+      Applied Machine Learning with R @ AMLD  | January 2020
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -55,11 +55,12 @@ layout: true
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 # Fighting overfitting
 
-When a model &lt;high&gt;fits the training data too well&lt;/high&gt; on the expense of its performance in prediction, this is called overfitting.  
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;When a model &lt;high&gt;fits the training data too well&lt;/high&gt; on the expense of its performance in prediction, this is called overfitting.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Just because model A is better than model B in training, does not mean it will be better in testing! Extremely flexible models are &lt;high&gt;'wolves in sheep's clothing'&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;But is there nothing we can do?.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-Just because model A is better than model B in training, does not mean it will be better in testing! Extremely flexible models are &lt;high&gt;'wolves in sheep's clothing'&lt;/high&gt;.
-
-But is there nothing we can do?
 
 ]
 
@@ -81,21 +82,19 @@ But is there nothing we can do?
 
 .pull-left45[
 
-All machine learning models are equipped with tuning parameters that &lt;high&gt; control model complexity&lt;high&gt;. 
-
-These tuning parameters can be identified using a &lt;high&gt;validation set&lt;/high&gt; created from the traning data.
-
-&lt;u&gt;Logic&lt;/u&gt;
-
-1 - Create separate test set. 
-
-2 - Fit model using various tuning parameters.
-
-3 - Select tuning leading to best prediction on
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;validation set.
-
-4 - Refit model to entire training set (training + 
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;validation).
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Machine learning models are equipped with tuning parameters that &lt;high&gt; control model complexity&lt;high&gt;.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;These tuning parameters can be identified using a &lt;high&gt;validation set&lt;/high&gt; created from the traning data.&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Algorithm:
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;1 - Create separate test set.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;2 - Fit model using various tuning parameters.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;3 - Select tuning leading to best prediction on validation set.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;4 - Refit model to entire training set (training + validation).&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 
 ]
@@ -114,7 +113,9 @@ These tuning parameters can be identified using a &lt;high&gt;validation set&lt;
 
 .pull-left4[
 
-Resampling methods automatize and generalize model tuning. 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Resampling methods automatize and generalize model tuning.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
   &lt;col width="30%"&gt;
@@ -160,7 +161,9 @@ Resampling methods automatize and generalize model tuning.
 
 .pull-left4[
 
-Resampling methods automatize and generalize model tuning. 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Resampling methods automatize and generalize model tuning.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
   &lt;col width="30%"&gt;
@@ -206,7 +209,9 @@ Resampling methods automatize and generalize model tuning.
 
 .pull-left4[
 
-Resampling methods automatize and generalize model tuning. 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Resampling methods automatize and generalize model tuning.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
   &lt;col width="30%"&gt;
@@ -263,7 +268,11 @@ class: center, middle
 
 .pull-left45[
 
-Penalizes regression loss for having large `\(\beta\)` values using the &lt;high&gt;lambda &amp;lambda; tuning parameter&lt;/high&gt; and one of several penalty functions.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Penalizes regression loss for having large &lt;font style="font-size:22px"&gt;&amp;beta&lt;/font&gt;; values using the &lt;high&gt;lambda &amp;lambda; tuning parameter&lt;/high&gt; and one of several penalty functions.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
 
 $$Regularized \;loss = \sum_i^n (y_i-\hat{y}_i)^2+\lambda \sum_j^p f(\beta_j)) $$
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
@@ -335,19 +344,21 @@ $$Regularized \;loss = \sum_i^n (y_i-\hat{y}_i)^2+\lambda \sum_j^p f(\beta_j)) $
 
 &lt;p style="padding-top:1px"&gt;&lt;/p&gt;
 
-Despite &lt;high&gt;superficial similarities&lt;/high&gt;, Lasso and Ridge show very different behavior.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Ridge&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;By penalizing the most extreme &amp;beta;s most strongly, Ridge leads to (relatively) more &lt;high&gt;uniform &amp;beta;s&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;b&gt;Lasso&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;By penalizing all &amp;beta;s equally, irrespective of magnitude, Lasso drives some &amp;beta;s to 0 resulting effectively in &lt;high&gt;automatic feature selection&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p style="padding-top:10px"&gt;&lt;/p&gt;
-
-&lt;b&gt;Ridge&lt;/b&gt;
-
-By penalizing the most extreme &amp;beta;s most strongly, Ridge leads to (relatively) more &lt;high&gt;uniform &amp;beta;s&lt;/high&gt;.
-
-&lt;p style="padding-top:10px"&gt;&lt;/p&gt;
-
-&lt;b&gt;Lasso&lt;/b&gt;
-
-By penalizing all &amp;beta;s equally, irrespective of magnitude, Lasso drives some &amp;beta;s to 0 resulting effectively in &lt;high&gt;automatic feature selection&lt;/high&gt;.
 
 ]
 
@@ -378,11 +389,12 @@ By penalizing all &amp;beta;s equally, irrespective of magnitude, Lasso drives s
 .pull-left4[
 
 
-To fit Lasso or Ridge penalized regression in R, use `method = "glmnet"`.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;To fit Lasso or Ridge penalized regression in R, use &lt;mono&gt;method = "glmnet"&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Specify the &lt;high&gt;type of penalty&lt;/high&gt; and the &lt;high&gt;penalty weight&lt;/high&gt; using the &lt;mono&gt;tuneGrid&lt;/mono&gt; argument.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-Specify the &lt;high&gt;type of penalty&lt;/high&gt; and the &lt;high&gt;penalty weight&lt;/high&gt; using the &lt;mono&gt;tuneGrid&lt;/mono&gt; argument. 
-
-&lt;u&gt;&lt;mono&gt;tuneGrid settings&lt;/mono&gt;&lt;/u&gt;
+&lt;br&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
 &lt;tr&gt;
@@ -464,7 +476,11 @@ class: center, middle
 
 .pull-left4[
 
-Decision trees have a &lt;high&gt;complexity parameter&lt;/high&gt; called `cp`.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Decision trees have a &lt;high&gt;complexity parameter&lt;/high&gt; called &lt;high&gt;cp&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
 
 &lt;p style="padding-top:3px"&gt;&lt;/p&gt;
 
@@ -476,8 +492,6 @@ Loss = &amp; Impurity\,+\\
 \end{split}`
 $$
 &lt;p style="padding-top:3px"&gt;&lt;/p&gt;
-
-&lt;u&gt;&lt;mono&gt;tuneGrid settings&lt;/mono&gt;&lt;/u&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
 &lt;tr&gt;
@@ -525,7 +539,11 @@ $$
 
 .pull-left4[
 
-Decision trees have a &lt;high&gt;complexity parameter&lt;/high&gt; called `cp`.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Decision trees have a &lt;high&gt;complexity parameter&lt;/high&gt; called &lt;high&gt;cp&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
 
 &lt;p style="padding-top:3px"&gt;&lt;/p&gt;
 
@@ -537,8 +555,6 @@ Loss = &amp; Impurity\,+\\
 \end{split}`
 $$
 &lt;p style="padding-top:3px"&gt;&lt;/p&gt;
-
-&lt;u&gt;&lt;mono&gt;tuneGrid settings&lt;/mono&gt;&lt;/u&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
 &lt;tr&gt;
@@ -609,11 +625,10 @@ class: center, middle
 
 .pull-left4[
 
-Random Forests have a &lt;high&gt;diversity parameter&lt;/high&gt; called &lt;mono&gt;mtry&lt;/mono&gt;.
-
-Technically, this controls how many features are randomly considered at each split of the trees.
-
-&lt;u&gt;&lt;mono&gt;tuneGrid settings&lt;/mono&gt;&lt;/u&gt;
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Random Forests have a &lt;high&gt;diversity parameter&lt;/high&gt; called &lt;mono&gt;mtry&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Technically, this controls how many features are randomly considered at each split of the trees..&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
 &lt;tr&gt;
@@ -658,11 +673,10 @@ Technically, this controls how many features are randomly considered at each spl
 
 .pull-left4[
 
-Random Forests have a &lt;high&gt;diversity parameter&lt;/high&gt; called &lt;mono&gt;mtry&lt;/mono&gt;.
-
-Technically, this controls how many features are randomly considered at each split of the trees.
-
-&lt;u&gt;&lt;mono&gt;tuneGrid settings&lt;/mono&gt;&lt;/u&gt;
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Random Forests have a &lt;high&gt;diversity parameter&lt;/high&gt; called &lt;mono&gt;mtry&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Technically, this controls how many features are randomly considered at each split of the trees.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
 &lt;tr&gt;
@@ -725,9 +739,7 @@ class: center,  middle
 
 &lt;br&gt;&lt;br&gt;
 
-# caret
-
-### Parameter tuning with k-fold cross-validation
+# Parameter tuning with k-fold cross-validation with `caret`
 
 &lt;img src="https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/09/Caret-package-in-R.png" width="60%" style="display: block; margin: auto;" /&gt;
 
@@ -740,13 +752,20 @@ class: center,  middle
 
 &lt;p style="padding-top:1px"&gt;&lt;/p&gt;
 
-&lt;b&gt;Goal&lt;/b&gt;
-
-Use 10-fold cross-validation to identify &lt;high&gt;optimal regularization parameters&lt;/high&gt; for a regression model. 
-
-&lt;b&gt;Consider&lt;/b&gt;
-
-`\(\alpha \in 0, .5, 1\)` and `\(\lambda \in 1, 2, ..., 100\)`
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;b&gt;Goal&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Use 10-fold cross-validation to identify &lt;high&gt;optimal regularization parameters&lt;/high&gt; for a regression model.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;b&gt;Using&lt;/b&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;font style="font-size:22px"&gt;&lt;mono&gt;&amp;alpha;	&amp;isin; 0, .5., 1&lt;/mono&gt;&lt;/font&gt; and &lt;font style="font-size:22px"&gt;&lt;mono&gt;&amp;lambda;	&amp;isin; 1, 2., ..., 100&lt;/mono&gt;&lt;/font&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -770,10 +789,11 @@ Use 10-fold cross-validation to identify &lt;high&gt;optimal regularization para
 
 .pull-left4[
 
-Specify the use of k-fold cross-validation using the `trainControl()` function.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Specify the use of k-fold cross-validation using the `trainControl()` function.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-
-&lt;u&gt;&lt;mono&gt;trainControl() arguments&lt;/mono&gt;&lt;/u&gt;
+&lt;br&gt;
 
 &lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
 &lt;tr&gt;
@@ -828,11 +848,11 @@ glmnet_mod &lt;- train(form = income ~ .,
 
 .pull-left4[
 
-Specify the tuning parameter values to consider using the &lt;high&gt;&lt;mono&gt;tuneGrid&lt;/mono&gt;&lt;/high&gt;.
-
-&lt;mono&gt;tuneGrid&lt;/mono&gt; expects a &lt;high&gt;list or data frame&lt;/high&gt; as input. 
-
-&lt;high&gt;Parameter combinations&lt;/high&gt; can be easily created using &lt;mono&gt;expand.grid&lt;/mono&gt;.
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Specify the tuning parameter values to consider using the &lt;high&gt;&lt;mono&gt;tuneGrid&lt;/mono&gt;&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;tuneGrid&lt;/mono&gt; expects a &lt;high&gt;list or data frame&lt;/high&gt; as input.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Parameter combinations&lt;/high&gt; can be easily created using &lt;mono&gt;expand.grid&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -995,9 +1015,10 @@ rhine                             0.4256
 
 .pull-left35[
 
-Compare the prediction performance of several models with `resamples()`.
-
-The `summary()` of this object will print 'prediction' error statistics from cross-validation during training. This is your &lt;high&gt;estimate of future prediction performance&lt;/high&gt;!
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Compare the prediction performance of several models with &lt;mono&gt;resamples()&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The &lt;mono&gt;summary()&lt;/mono&gt; of this object will print 'prediction' error statistics from cross-validation during training. This is your &lt;high&gt;estimate of future prediction performance&lt;/high&gt;!&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -1030,9 +1051,10 @@ summary(resamples_mod)
 
 &lt;p style="padding-top:1px"&gt;&lt;/p&gt;
 
-Compare the prediction performance of several models with `resamples()`.
-
-The `summary()` of this object will print 'prediction' error statistics from cross-validation during training. This is your &lt;high&gt;estimate of future prediction performance&lt;/high&gt;!
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Compare the prediction performance of several models with &lt;mono&gt;resamples()&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;The &lt;mono&gt;summary()&lt;/mono&gt; of this object will print 'prediction' error statistics from cross-validation during training. This is your &lt;high&gt;estimate of future prediction performance&lt;/high&gt;!&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 ]
 
@@ -1071,7 +1093,7 @@ glm    0.8268  0.8549 0.8694 0.8624  0.8740 0.8825    0
 ---
 class: middle, center
 
-&lt;h1&gt;&lt;a href=https://therbootcamp.github.io/ML_2019Oct/_sessions/Optimization/Optimization_practical.html&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href=https://therbootcamp.github.io/AML_2020AMLD/_sessions/Optimization/Optimization_practical.html&gt;Practical&lt;/a&gt;&lt;/h1&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

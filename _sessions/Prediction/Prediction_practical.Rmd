@@ -254,9 +254,9 @@ hist(XXX)
 ```
 
 ```{r}
-rpart_predfit[1:10] # Only first 10
-summary(rpart_predfit)
-hist(rpart_predfit)
+rpart_fitted[1:10] # Only first 10
+summary(rpart_fitted)
+hist(rpart_fitted)
 ```
 
 #### Random Forests
@@ -358,7 +358,7 @@ postResample(pred = rf_fitted, obs = criterion_train)
 
 accuracy <- tibble(criterion_train = criterion_train,
                    Regression = glm_fitted,
-                   DecisionTrees = rpart_predfit,
+                   DecisionTrees = rpart_fitted,
                    RandomForest = rf_fitted) %>%
                gather(model, prediction, -criterion_train) %>%
                # Add error measures
@@ -711,7 +711,7 @@ postResample(pred = rf_fitted, obs = criterion_train)
 # Tidy competition results
 accuracy <- tibble(criterion_train = criterion_train,
                    Regression = glm_fitted,
-                   DecisionTrees = rpart_predfit,
+                   DecisionTrees = rpart_fitted,
                    RandomForest = rf_fitted) %>%
                gather(model, prediction, -criterion_train) %>%
                # Add error measures
@@ -839,7 +839,7 @@ postResample(pred = rf_pred, obs = criterion_test)
 
 ```{r, eval = FALSE, echo = TRUE}
 # Create random forest model with 1000 trees
-mod <- train(form = price ~ .l,
+mod <- train(form = price ~ .,
              data = house_train,
              method = "rf",
              trControl = ctrl_none,

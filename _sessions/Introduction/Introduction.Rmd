@@ -590,7 +590,7 @@ Based on <high>data</high> from past patients <high>at this hospital</high>, a <
   <li class="m2"><span><mono>caret</mono> facilitates...
   <br><br>
   <ul class="level">
-    <li><span><high>data pre-processing</high>/span></li>
+    <li><span><high>data pre-processing</high></span></li>
     <li><span><high>fitting, tuning, & model prediction</high></span></li>
   </ul>
   </span></li>

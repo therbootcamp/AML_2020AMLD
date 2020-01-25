@@ -1151,4 +1151,4 @@ summary(resamples_mod)
 ---
 class: middle, center
 
-<h1><a href=https://therbootcamp.github.io/AML_2020AMLD/_sessions/Optimization/Optimization_practical.html>Practical</a></h1>
+<h1><a href=https://therbootcamp.github.io/AML_2020AMLD/_sessions/Tuning/Tuning_practical.html>Practical</a></h1>

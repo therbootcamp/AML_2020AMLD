@@ -643,29 +643,29 @@ logreg2
   <td>
   </td>
   <td>
-    <eq><b>y&#770; = 1</b></eq>
+    <eq><b>y = 1</b></eq>
   </td>
   <td>
-    <eq><b>y&#770; = 0</b></eq>
+    <eq><b>y = 0</b></eq>
   </td>
 </tr>
 <tr>
   <td bgcolor="white">
-    <eq><b>y = 1</b></eq>
+    <eq><b>y&#770; = 1</b></eq>
   </td>
   <td bgcolor="white">
     <font color="#6ABA9A"> True positive (TP)</font>
   </td>
   <td bgcolor="white">
-    <font color="#EA4B68"> False negative (FN)</font>
+    <font color="#EA4B68"> False positive (FP)</font>
   </td>
 </tr>
 <tr>
   <td>
-    <eq><b>y = 0</b></eq>
+    <eq><b>y&#770; = 0</b></eq>
   </td>
   <td>
-    <font color="#EA4B68"> False positive (FP)</font>
+    <font color="#EA4B68"> False negative (FN)</font>
   </td>
   <td>
     <font color="#6ABA9A"> True negative (TN)</font>
@@ -724,29 +724,29 @@ $$\small Specificity = \frac{TN}{ TN + FP }$$
   <td>
   </td>
   <td>
-    <eq><b>"Default"</b></eq>
+    <eq><b>Default</b></eq>
   </td>
   <td>
-    <eq><b>"Repay"</b></eq>
+    <eq><b>Repay</b></eq>
   </td>
 </tr>
 <tr>
   <td bgcolor="white">
-    <eq><b>Default</b></eq>
+    <eq><b>"Default"</b></eq>
   </td>
   <td bgcolor="white">
     <font color="#6ABA9A"> TP = 3</font>
   </td>
   <td bgcolor="white">
-    <font color="#EA4B68"> FN = 1</font>
+    <font color="#EA4B68"> FP = 1</font>
   </td>
 </tr>
 <tr>
   <td>
-    <eq><b>Repay</b></eq>
+    <eq><b>"Repay"</b></eq>
   </td>
   <td>
-    <font color="#EA4B68"> FP = 1</font>
+    <font color="#EA4B68"> FN = 1</font>
   </td>
   <td>
     <font color="#6ABA9A"> TN = 2</font>
@@ -1161,7 +1161,7 @@ load_mod <- train(form = factor(Default) ~ .,
 
 <ul>
   <li class="m1"><span>The <mono>train()</mono> function returns a <mono>list</mono> with an object called <mono>finalModel</mono> - this is your <high>fitted machine learning model</high>!</span></li>
-  <li class="m1"><span><high>Access</high> the model with <mono>mod$finalModel<mono> and <high>explore</high> the object with generic functions.</span></li>
+  <li class="m2"><span><high>Access</high> the model with <mono>mod$finalModel<mono> and <high>explore</high> the object with generic functions.</span></li>
 </ul>
 
 <br>
